@@ -355,7 +355,7 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndSProxisFalse(v
 
 
 
-void test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndsbarbottomisTrue(void)
+void test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndbarbottomisTrue(void)
 
 {
 
@@ -405,14 +405,84 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbotto
 
 
 
+
+
     fsm_fire((fsm_t*)(&f));
 
     fsm_fire((fsm_t*)(&f));
 
 
 
-    do {if ((f.fsm.current_state == BAJANDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(209)));}} while(0);
+    do {if ((f.fsm.current_state == BAJANDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(210)));}} while(0);
 
-    do {if ((f.bajar == 1)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(210)));}} while(0);
+    do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(211)));}} while(0);
+
+}
+
+
+
+
+
+void test_fsm_control_entrada_fsmFireFollowTransitionWhenWaitingAndDeadlineisTrue(void)
+
+{
+
+    fsm_control_entrada_t f;
+
+
+
+    timer_CMockExpectAndReturn(219, 11);
+
+
+
+    fsm_control_entrada_init(&f);
+
+    f.next_timeout = 10;
+
+    f.fsm.current_state = WAITING;
+
+
+
+    fsm_fire((fsm_t*)(&f));
+
+
+
+    do {if ((f.fsm.current_state == BAJANDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(227)));}} while(0);
+
+    do {if ((f.bajar == 1)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(228)));}} while(0);
+
+}
+
+
+
+void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlineisFalse(void)
+
+{
+
+    fsm_control_entrada_t f;
+
+
+
+    timer_CMockExpectAndReturn(235, 9);
+
+    s_prox_CMockIgnoreAndReturn(236, 0);
+
+
+
+    fsm_control_entrada_init(&f);
+
+    f.next_timeout = 10;
+
+    f.fsm.current_state = WAITING;
+
+
+
+    fsm_fire((fsm_t*)(&f));
+
+
+
+    do {if ((f.fsm.current_state == WAITING)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(244)));}} while(0);
+
+    do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(245)));}} while(0);
 
 }
