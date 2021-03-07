@@ -16,6 +16,7 @@ void tearDown(void)
 {
 }
 
+//Rellena la estructura de transiciones de la fsm cuando se inicializa
 void test_fsm_control_pulsera_fsmInitFillsStructWithSomething(void)
 {
     fsm_control_pulsera_t zero;
@@ -27,6 +28,7 @@ void test_fsm_control_pulsera_fsmInitFillsStructWithSomething(void)
     TEST_ASSERT(memcmp(&zero, &f, sizeof(fsm_control_pulsera_t)) != 0);
 }
 
+//
 void test_fsm_control_fsmFireCallsCheckWhenSuspended(void)
 {
     fsm_control_pulsera_t f;
@@ -37,3 +39,4 @@ void test_fsm_control_fsmFireCallsCheckWhenSuspended(void)
     TEST_ASSERT(f.fsm.current_state == SUSPENDED);
     fsm_fire((fsm_t*)(&f));
 }
+

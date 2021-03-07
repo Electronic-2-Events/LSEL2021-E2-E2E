@@ -3,5 +3,5 @@
 - src/fsm.h
 - src/fsm_control_pulsera.h
 - build/test/mocks/mock_fsm_control_pulsera_internal.h
-- mock_client.h
+- build/test/mocks/mock_client.h
 - build/temp/_test_fsm_control_pulsera.c

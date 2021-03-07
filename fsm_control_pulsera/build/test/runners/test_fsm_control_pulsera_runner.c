@@ -85,8 +85,8 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("test_fsm_control_pulsera.c");
-  run_test(test_fsm_control_pulsera_fsmInitFillsStructWithSomething, "test_fsm_control_pulsera_fsmInitFillsStructWithSomething", 19);
-  run_test(test_fsm_control_fsmFireCallsCheckWhenSuspended, "test_fsm_control_fsmFireCallsCheckWhenSuspended", 30);
+  run_test(test_fsm_control_pulsera_fsmInitFillsStructWithSomething, "test_fsm_control_pulsera_fsmInitFillsStructWithSomething", 20);
+  run_test(test_fsm_control_fsmFireCallsCheckWhenSuspended, "test_fsm_control_fsmFireCallsCheckWhenSuspended", 32);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

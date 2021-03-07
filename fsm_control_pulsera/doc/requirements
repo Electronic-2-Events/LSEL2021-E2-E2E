@@ -1,0 +1,6 @@
+Esta integrado con FSM
+Tiene una funcion que inicialmente rellena una estructura
+
+Cuando se habi
+
+Una llamada a fsm_fire llama la funcion de guarda
