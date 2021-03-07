@@ -19,9 +19,14 @@ static void fsm_subir(fsm_t* f){
     fp->subir = 1;
 }
 
+static int fsm_s_bar_top(fsm_t* f){
+    
+}
+
 static fsm_trans_t entrada_tt[] = {
     {DOWN, fsm_NFC ,SUBIENDO, fsm_subir },
-   /* {SUBIENDO, , UP, },
+    {SUBIENDO, , UP, },
+    /*{UP, , BAJANDO, },
     {UP, , BAJANDO, },
     {UP, , WAITING, },
     {WAITING, , BAJANDO, },
