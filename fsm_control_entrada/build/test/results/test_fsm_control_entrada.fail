@@ -1,0 +1,66 @@
+---
+:source:
+  :path: test
+  :file: test_fsm_control_entrada.c
+:successes:
+- :test: test_fsm_control_entrada_fsmInitFillsStructWithSomething
+  :line: 29
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireCallsNFCWhenDown
+  :line: 40
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue
+  :line: 52
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse
+  :line: 66
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTrue
+  :line: 79
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse
+  :line: 96
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndDeadlineisTrue
+  :line: 113
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndDeadlineisFalse
+  :line: 129
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndSProxisTrue
+  :line: 146
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndSProxisFalse
+  :line: 163
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndsbarbottomisTrue
+  :line: 181
+  :message: ''
+  :unity_test_time: 0
+:failures:
+- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbottomisFalse
+  :line: 196
+  :message: Function s_bar_top.  Called more times than expected.
+  :unity_test_time: 0
+:ignores:
+- :test: test_fsm_Inicial
+  :line: 27
+  :message: ''
+  :unity_test_time: 0
+:counts:
+  :total: 13
+  :passed: 11
+  :failed: 1
+  :ignored: 1
+:stdout: []
+:time: 0.015899499994702637
