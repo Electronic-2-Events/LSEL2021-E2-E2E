@@ -77,6 +77,7 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTru
     s_bar_top_ExpectAndReturn(1);
 
     fsm_control_entrada_init(&f);
+    f.fsm.current_state = SUBIENDO;
     fsm_fire((fsm_t*)(&f));
 
     TEST_ASSERT(f.fsm.current_state == UP);
@@ -86,10 +87,12 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTru
 void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse(void)
 {
     fsm_control_entrada_t f;
-
+    
+    NFC_IgnoreAndReturn(1);
     s_bar_top_ExpectAndReturn(0);
 
     fsm_control_entrada_init(&f);
+
     fsm_fire((fsm_t*)(&f));
 
     TEST_ASSERT(f.fsm.current_state == SUBIENDO);

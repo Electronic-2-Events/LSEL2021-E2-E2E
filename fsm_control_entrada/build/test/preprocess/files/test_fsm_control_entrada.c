@@ -154,13 +154,15 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTru
 
     fsm_control_entrada_init(&f);
 
+    f.fsm.current_state = SUBIENDO;
+
     fsm_fire((fsm_t*)(&f));
 
 
 
-    do {if ((f.fsm.current_state == UP)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(82)));}} while(0);
+    do {if ((f.fsm.current_state == UP)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(83)));}} while(0);
 
-    do {if ((f.subir == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(83)));}} while(0);
+    do {if ((f.subir == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(84)));}} while(0);
 
 }
 
@@ -174,18 +176,22 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopI
 
 
 
-    s_bar_top_CMockExpectAndReturn(90, 0);
+    NFC_CMockExpectAndReturn(91, 1);
+
+    s_bar_top_CMockExpectAndReturn(92, 0);
 
 
 
     fsm_control_entrada_init(&f);
 
+
+
     fsm_fire((fsm_t*)(&f));
 
 
 
-    do {if ((f.fsm.current_state == SUBIENDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(95)));}} while(0);
+    do {if ((f.fsm.current_state == SUBIENDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(98)));}} while(0);
 
-    do {if ((f.subir == 1)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(96)));}} while(0);
+    do {if ((f.subir == 1)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(99)));}} while(0);
 
 }

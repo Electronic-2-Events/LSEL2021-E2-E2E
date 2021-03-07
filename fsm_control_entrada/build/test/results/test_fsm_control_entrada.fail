@@ -19,14 +19,14 @@
   :line: 60
   :message: ''
   :unity_test_time: 0
-:failures:
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTrue
   :line: 73
-  :message: Function NFC.  Called more times than expected.
+  :message: ''
   :unity_test_time: 0
+:failures:
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse
-  :line: 86
-  :message: Function NFC.  Called more times than expected.
+  :line: 87
+  :message: Function s_bar_top.  Called fewer times than expected.
   :unity_test_time: 0
 :ignores:
 - :test: test_fsm_Inicial
@@ -35,12 +35,8 @@
   :unity_test_time: 0
 :counts:
   :total: 7
-  :passed: 4
-  :failed: 2
+  :passed: 5
+  :failed: 1
   :ignored: 1
 :stdout: []
-<<<<<<< HEAD:fsm_control_entrada/build/test/results/test_fsm_control_entrada.fail
-:time: 0.014672000004793517
-=======
-:time: 0.007896299997810274
->>>>>>> d08ec7d3b12cd719c8287e5b7c25d20b2b4dd574:fsm_control_entrada/build/test/results/test_fsm_control_entrada.pass
+:time: 0.012761500001943205

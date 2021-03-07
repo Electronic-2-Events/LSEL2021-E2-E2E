@@ -32,7 +32,7 @@ static int fsm_s_bar_top(fsm_t* f){
 
 static fsm_trans_t entrada_tt[] = {
     {DOWN, fsm_NFC ,SUBIENDO, fsm_subir },
-    {SUBIENDO,fsm_s_bar_top , UP, fsm_parar},
+    {SUBIENDO, fsm_s_bar_top , UP, fsm_parar},
     /*{UP, , BAJANDO, },
     {UP, , BAJANDO, },
     {UP, , WAITING, },
