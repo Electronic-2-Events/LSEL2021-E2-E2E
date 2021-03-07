@@ -27,16 +27,24 @@
   :line: 96
   :message: ''
   :unity_test_time: 0
-:failures: []
+:failures:
+- :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndBarBottomisTrue
+  :line: 113
+  :message: Function timer.  Called more times than expected.
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndBarBottomisFalse
+  :line: 127
+  :message: Function s_bar_top.  Called more times than expected.
+  :unity_test_time: 0
 :ignores:
 - :test: test_fsm_Inicial
   :line: 27
   :message: ''
   :unity_test_time: 0
 :counts:
-  :total: 7
+  :total: 9
   :passed: 6
-  :failed: 0
+  :failed: 2
   :ignored: 1
 :stdout: []
-:time: 0.011381700001948047
+:time: 0.00875490001635626

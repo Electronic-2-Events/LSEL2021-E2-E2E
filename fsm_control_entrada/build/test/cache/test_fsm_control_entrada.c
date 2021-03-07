@@ -216,3 +216,65 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopI
     do {if ((f.subir == 1)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(110)));}} while(0);
 
 }
+
+
+
+void test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndBarBottomisTrue(void)
+
+{
+
+    fsm_control_entrada_t f;
+
+
+
+    s_bar_bottom_CMockExpectAndReturn(117, 1);
+
+
+
+    fsm_control_entrada_init(&f);
+
+    f.fsm.current_state = BAJANDO;
+
+    fsm_fire((fsm_t*)(&f));
+
+
+
+    do {if ((f.fsm.current_state == DOWN)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(123)));}} while(0);
+
+    do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(124)));}} while(0);
+
+}
+
+
+
+void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndBarBottomisFalse(void)
+
+{
+
+    fsm_control_entrada_t f;
+
+
+
+    NFC_CMockIgnoreAndReturn(131, 1);
+
+    s_bar_bottom_CMockExpectAndReturn(132, 1);
+
+
+
+    fsm_control_entrada_init(&f);
+
+
+
+    fsm_fire((fsm_t*)(&f));
+
+
+
+    fsm_fire((fsm_t*)(&f));
+
+
+
+    do {if ((f.fsm.current_state == BAJANDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(140)));}} while(0);
+
+    do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(141)));}} while(0);
+
+}
