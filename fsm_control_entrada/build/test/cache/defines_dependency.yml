@@ -5,3 +5,5 @@ src/fsm.c:
 - TEST
 src/fsm_control_entrada.c:
 - TEST
+build/test/mocks/mock_timer.c:
+- TEST

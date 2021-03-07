@@ -5,14 +5,16 @@
 
 #include "fsm.h"
 
-struct _fsm_control_entrada_t {
+struct _fsm_control_entrada_t
+{
     fsm_t fsm;
     int subir;
+    int bajar;
+    uint32_t next_timeout;
 };
 
 typedef struct _fsm_control_entrada_t fsm_control_entrada_t;
 
-void fsm_control_entrada_init(fsm_control_entrada_t* f);
-
+void fsm_control_entrada_init(fsm_control_entrada_t *f);
 
 #endif // FSM_CONTROL_ENTRADA_H

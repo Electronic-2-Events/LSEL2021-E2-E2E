@@ -4,6 +4,7 @@
 #include "unity.h"
 #include "cmock.h"
 #include "mock_acciones.h"
+#include "mock_timer.h"
 
 int GlobalExpectCount;
 int GlobalVerifyOrder;
@@ -28,14 +29,17 @@ static void CMock_Init(void)
   GlobalVerifyOrder = 0;
   GlobalOrderError = NULL;
   mock_acciones_Init();
+  mock_timer_Init();
 }
 static void CMock_Verify(void)
 {
   mock_acciones_Verify();
+  mock_timer_Verify();
 }
 static void CMock_Destroy(void)
 {
   mock_acciones_Destroy();
+  mock_timer_Destroy();
 }
 
 /*=======Test Reset Options=====*/
@@ -86,13 +90,13 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("test_fsm_control_entrada.c");
-  run_test(test_fsm_Inicial, "test_fsm_Inicial", 19);
-  run_test(test_fsm_control_entrada_fsmInitFillsStructWithSomething, "test_fsm_control_entrada_fsmInitFillsStructWithSomething", 23);
-  run_test(test_fsm_control_entrada_fsmFireCallsNFCWhenDown, "test_fsm_control_entrada_fsmFireCallsNFCWhenDown", 34);
-  run_test(test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue, "test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue", 46);
-  run_test(test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse, "test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse", 60);
-  run_test(test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTrue, "test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTrue", 73);
-  run_test(test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse, "test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse", 87);
+  run_test(test_fsm_Inicial, "test_fsm_Inicial", 25);
+  run_test(test_fsm_control_entrada_fsmInitFillsStructWithSomething, "test_fsm_control_entrada_fsmInitFillsStructWithSomething", 29);
+  run_test(test_fsm_control_entrada_fsmFireCallsNFCWhenDown, "test_fsm_control_entrada_fsmFireCallsNFCWhenDown", 40);
+  run_test(test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue, "test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue", 52);
+  run_test(test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse, "test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse", 66);
+  run_test(test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTrue, "test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTrue", 79);
+  run_test(test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse, "test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse", 96);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

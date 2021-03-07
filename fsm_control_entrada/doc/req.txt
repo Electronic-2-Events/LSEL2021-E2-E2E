@@ -10,7 +10,7 @@ Lista de requisitos:
 
 - En subiendo se llama a s_bar_top
 {
-    - Si se llama y es 1 se pasa a UP y subir se pone a 0
+    - Si se llama y es 1 se pasa a UP, subir se pone a 0 y deadline se cambia
     - Si se llama y es 0 se queda en subiendo y subir es 1
 }
 //- En subiendo no se llama NFC

@@ -7,6 +7,12 @@
 #include "fsm_control_entrada_internal.h"
 
 #include "mock_acciones.h"
+#include "mock_timer.h"
+
+
+#define DEADLINE10 (10)
+#define DEADLINE3 (3)
+
 
 void setUp(void)
 {
@@ -75,6 +81,7 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTru
     fsm_control_entrada_t f;
 
     s_bar_top_ExpectAndReturn(1);
+    timer_ExpectAndReturn(0);
 
     fsm_control_entrada_init(&f);
     f.fsm.current_state = SUBIENDO;
@@ -82,6 +89,8 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTru
 
     TEST_ASSERT(f.fsm.current_state == UP);
     TEST_ASSERT(f.subir == 0);
+    TEST_ASSERT(f.deadline ==DEADLINE10);
+
 }
 
 void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse(void)
@@ -94,7 +103,7 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopI
     fsm_control_entrada_init(&f);
 
     fsm_fire((fsm_t*)(&f));
-    
+
     fsm_fire((fsm_t*)(&f));
 
     TEST_ASSERT(f.fsm.current_state == SUBIENDO);
