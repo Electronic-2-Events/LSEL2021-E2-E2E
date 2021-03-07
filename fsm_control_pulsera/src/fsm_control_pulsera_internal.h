@@ -1,0 +1,13 @@
+#ifndef FSM_CONTROL_INTERNAL_H
+#define FSM_CONTROL_INTERNAL_H
+
+#include "fsm.h"
+
+enum {
+    SUSPENDED,
+    IDLE
+};
+
+//int fsm_control_check(fsm_t* f);
+
+#endif
