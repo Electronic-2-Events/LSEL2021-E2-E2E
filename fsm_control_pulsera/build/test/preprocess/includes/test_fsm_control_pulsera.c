@@ -1,4 +1,0 @@
----
-- "/usr/local/bundle/gems/ceedling-0.30.0/vendor/unity/src/unity.h"
-- src/fsm_control_pulsera.h
-- build/temp/_test_fsm_control_pulsera.c
