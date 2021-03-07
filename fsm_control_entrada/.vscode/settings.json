@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.vhd": "vhdl",
+        "fsm_control_entrada.h": "c",
+        "fsm_control_entrada_internal.h": "c"
+    }
+}
