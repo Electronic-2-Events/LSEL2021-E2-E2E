@@ -34,6 +34,16 @@ typedef int (* CMOCK_NFC_CALLBACK)(int cmock_num_calls);
 void NFC_AddCallback(CMOCK_NFC_CALLBACK Callback);
 void NFC_Stub(CMOCK_NFC_CALLBACK Callback);
 #define NFC_StubWithCallback NFC_Stub
+#define s_bar_top_IgnoreAndReturn(cmock_retval) s_bar_top_CMockIgnoreAndReturn(__LINE__, cmock_retval)
+void s_bar_top_CMockIgnoreAndReturn(UNITY_LINE_TYPE cmock_line, int cmock_to_return);
+#define s_bar_top_StopIgnore() s_bar_top_CMockStopIgnore()
+void s_bar_top_CMockStopIgnore(void);
+#define s_bar_top_ExpectAndReturn(cmock_retval) s_bar_top_CMockExpectAndReturn(__LINE__, cmock_retval)
+void s_bar_top_CMockExpectAndReturn(UNITY_LINE_TYPE cmock_line, int cmock_to_return);
+typedef int (* CMOCK_s_bar_top_CALLBACK)(int cmock_num_calls);
+void s_bar_top_AddCallback(CMOCK_s_bar_top_CALLBACK Callback);
+void s_bar_top_Stub(CMOCK_s_bar_top_CALLBACK Callback);
+#define s_bar_top_StubWithCallback s_bar_top_Stub
 
 #if defined(__GNUC__) && !defined(__ICC) && !defined(__TMS470__)
 #if __GNUC__ > 4 || (__GNUC__ == 4 && (__GNUC_MINOR__ > 6 || (__GNUC_MINOR__ == 6 && __GNUC_PATCHLEVEL__ > 0)))

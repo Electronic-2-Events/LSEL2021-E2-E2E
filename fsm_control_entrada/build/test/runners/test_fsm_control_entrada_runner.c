@@ -17,6 +17,8 @@ extern void test_fsm_control_entrada_fsmInitFillsStructWithSomething(void);
 extern void test_fsm_control_entrada_fsmFireCallsNFCWhenDown(void);
 extern void test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue(void);
 extern void test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse(void);
+extern void test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTrue(void);
+extern void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse(void);
 
 
 /*=======Mock Management=====*/
@@ -89,6 +91,8 @@ int main(void)
   run_test(test_fsm_control_entrada_fsmFireCallsNFCWhenDown, "test_fsm_control_entrada_fsmFireCallsNFCWhenDown", 34);
   run_test(test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue, "test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue", 46);
   run_test(test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse, "test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse", 60);
+  run_test(test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTrue, "test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTrue", 73);
+  run_test(test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse, "test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse", 86);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();
