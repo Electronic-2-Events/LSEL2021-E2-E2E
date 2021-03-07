@@ -110,7 +110,6 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopI
     TEST_ASSERT(f.subir == 1);
 }
 
-<<<<<<< HEAD
 void test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndDeadlineisTrue(void)
 {
     fsm_control_entrada_t f;
@@ -176,35 +175,3 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndSProxisFalse(v
 
     TEST_ASSERT(f.fsm.current_state == UP);
 }
-=======
-void test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndBarBottomisTrue(void)
-{
-    fsm_control_entrada_t f;
-
-    s_bar_bottom_ExpectAndReturn(1);
-
-    fsm_control_entrada_init(&f);
-    f.fsm.current_state = BAJANDO;
-    fsm_fire((fsm_t*)(&f));
-
-    TEST_ASSERT(f.fsm.current_state == DOWN);
-    TEST_ASSERT(f.bajar == 0);
-}
-
-void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndBarBottomisFalse(void)
-{
-    fsm_control_entrada_t f;
-    
-    NFC_IgnoreAndReturn(1);
-    s_bar_bottom_ExpectAndReturn(1);
-
-    fsm_control_entrada_init(&f);
-
-    fsm_fire((fsm_t*)(&f));
-    
-    fsm_fire((fsm_t*)(&f));
-
-    TEST_ASSERT(f.fsm.current_state == BAJANDO);
-    TEST_ASSERT(f.bajar == 0);
-}
->>>>>>> 798385e9c0dc9a5d5e00ed50fce30feb56924960

@@ -220,10 +220,8 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopI
 
 
 <<<<<<< HEAD
+
 void test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndDeadlineisTrue(void)
-=======
-void test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndBarBottomisTrue(void)
->>>>>>> 798385e9c0dc9a5d5e00ed50fce30feb56924960
 
 {
 
@@ -231,49 +229,31 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndBarBottomisTr
 
 
 
-<<<<<<< HEAD
-    timer_CMockExpectAndReturn(117, 12);
-=======
-    s_bar_bottom_CMockExpectAndReturn(117, 1);
->>>>>>> 798385e9c0dc9a5d5e00ed50fce30feb56924960
+    timer_CMockExpectAndReturn(118, 12);
 
 
 
     fsm_control_entrada_init(&f);
 
-<<<<<<< HEAD
     f.next_timeout = 10;
 
     f.fsm.current_state = UP;
 
 
-=======
-    f.fsm.current_state = BAJANDO;
->>>>>>> 798385e9c0dc9a5d5e00ed50fce30feb56924960
 
     fsm_fire((fsm_t*)(&f));
 
 
 
-<<<<<<< HEAD
-    do {if ((f.fsm.current_state == BAJANDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(125)));}} while(0);
+    do {if ((f.fsm.current_state == BAJANDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(126)));}} while(0);
 
-    do {if ((f.bajar == 1)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(126)));}} while(0);
-=======
-    do {if ((f.fsm.current_state == DOWN)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(123)));}} while(0);
-
-    do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(124)));}} while(0);
->>>>>>> 798385e9c0dc9a5d5e00ed50fce30feb56924960
+    do {if ((f.bajar == 1)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(127)));}} while(0);
 
 }
 
 
 
-<<<<<<< HEAD
 void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndDeadlineisFalse(void)
-=======
-void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndBarBottomisFalse(void)
->>>>>>> 798385e9c0dc9a5d5e00ed50fce30feb56924960
 
 {
 
@@ -281,37 +261,27 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndBarBottom
 
 
 
-<<<<<<< HEAD
-    timer_CMockExpectAndReturn(133, 8);
+    timer_CMockExpectAndReturn(134, 8);
 
-    s_prox_CMockIgnoreAndReturn(134, 0);
-=======
-    NFC_CMockIgnoreAndReturn(131, 1);
-
-    s_bar_bottom_CMockExpectAndReturn(132, 1);
->>>>>>> 798385e9c0dc9a5d5e00ed50fce30feb56924960
+    s_prox_CMockIgnoreAndReturn(135, 0);
 
 
 
     fsm_control_entrada_init(&f);
 
-<<<<<<< HEAD
     f.next_timeout = 10;
 
     f.fsm.current_state = UP;
 
-=======
->>>>>>> 798385e9c0dc9a5d5e00ed50fce30feb56924960
 
 
     fsm_fire((fsm_t*)(&f));
 
 
 
-<<<<<<< HEAD
-    do {if ((f.fsm.current_state == UP)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(142)));}} while(0);
+    do {if ((f.fsm.current_state == UP)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(143)));}} while(0);
 
-    do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(143)));}} while(0);
+    do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(144)));}} while(0);
 
 }
 
@@ -325,9 +295,9 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndSProxisTrue(void)
 
 
 
-    timer_CMockIgnoreAndReturn(150, 1);
+    timer_CMockIgnoreAndReturn(151, 1);
 
-    s_prox_CMockIgnoreAndReturn(151, 1);
+    s_prox_CMockIgnoreAndReturn(152, 1);
 
 
 
@@ -339,16 +309,13 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndSProxisTrue(void)
 
 
 
-=======
->>>>>>> 798385e9c0dc9a5d5e00ed50fce30feb56924960
     fsm_fire((fsm_t*)(&f));
 
 
 
-<<<<<<< HEAD
-    do {if ((f.fsm.current_state == WAITING)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(159)));}} while(0);
+    do {if ((f.fsm.current_state == WAITING)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(160)));}} while(0);
 
-    do {if ((f.next_timeout == 1+3)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(160)));}} while(0);
+    do {if ((f.next_timeout == 1+3)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(161)));}} while(0);
 
 }
 
@@ -362,9 +329,9 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndSProxisFalse(v
 
 
 
-    timer_CMockIgnoreAndReturn(167, 1);
+    timer_CMockIgnoreAndReturn(168, 1);
 
-    s_prox_CMockIgnoreAndReturn(168, 0);
+    s_prox_CMockIgnoreAndReturn(169, 0);
 
 
 
@@ -380,11 +347,70 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndSProxisFalse(v
 
 
 
-    do {if ((f.fsm.current_state == UP)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(176)));}} while(0);
-=======
-    do {if ((f.fsm.current_state == BAJANDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(140)));}} while(0);
-
-    do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(141)));}} while(0);
->>>>>>> 798385e9c0dc9a5d5e00ed50fce30feb56924960
+    do {if ((f.fsm.current_state == UP)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(177)));}} while(0);
 
 }
+
+=======
+
+void test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndBarBottomisTrue(void)
+
+{
+
+    fsm_control_entrada_t f;
+
+
+
+    s_bar_bottom_CMockExpectAndReturn(184, 1);
+
+
+
+    fsm_control_entrada_init(&f);
+
+    f.fsm.current_state = BAJANDO;
+
+    fsm_fire((fsm_t*)(&f));
+
+
+
+    do {if ((f.fsm.current_state == DOWN)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(190)));}} while(0);
+
+    do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(191)));}} while(0);
+
+}
+
+
+
+void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndBarBottomisFalse(void)
+
+{
+
+    fsm_control_entrada_t f;
+
+
+
+    NFC_CMockIgnoreAndReturn(198, 1);
+
+    s_bar_bottom_CMockExpectAndReturn(199, 1);
+
+
+
+    fsm_control_entrada_init(&f);
+
+
+
+    fsm_fire((fsm_t*)(&f));
+
+
+
+    fsm_fire((fsm_t*)(&f));
+
+
+
+    do {if ((f.fsm.current_state == BAJANDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(207)));}} while(0);
+
+    do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(208)));}} while(0);
+
+}
+
+>>>>>>> 798385e9c0dc9a5d5e00ed50fce30feb56924960
