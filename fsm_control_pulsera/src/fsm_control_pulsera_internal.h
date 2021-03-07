@@ -8,6 +8,6 @@ enum {
     IDLE
 };
 
-//int fsm_control_check(fsm_t* f);
+int fsm_control_pulsera_check(fsm_t* f);
 
 #endif

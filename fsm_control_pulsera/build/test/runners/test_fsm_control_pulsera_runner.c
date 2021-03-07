@@ -2,6 +2,9 @@
 
 /*=======Automagically Detected Files To Include=====*/
 #include "unity.h"
+#include "cmock.h"
+#include "mock_fsm_control_pulsera_internal.h"
+#include "mock_client.h"
 
 int GlobalExpectCount;
 int GlobalVerifyOrder;
@@ -10,7 +13,8 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_fsm_control_pulsera_NeedToImplement(void);
+extern void test_fsm_control_pulsera_fsmInitFillsStructWithSomething(void);
+extern void test_fsm_control_fsmFireCallsCheckWhenSuspended(void);
 
 
 /*=======Mock Management=====*/
@@ -19,12 +23,18 @@ static void CMock_Init(void)
   GlobalExpectCount = 0;
   GlobalVerifyOrder = 0;
   GlobalOrderError = NULL;
+  mock_fsm_control_pulsera_internal_Init();
+  mock_client_Init();
 }
 static void CMock_Verify(void)
 {
+  mock_fsm_control_pulsera_internal_Verify();
+  mock_client_Verify();
 }
 static void CMock_Destroy(void)
 {
+  mock_fsm_control_pulsera_internal_Destroy();
+  mock_client_Destroy();
 }
 
 /*=======Test Reset Options=====*/
@@ -75,7 +85,9 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("test_fsm_control_pulsera.c");
-  run_test(test_fsm_control_pulsera_NeedToImplement, "test_fsm_control_pulsera_NeedToImplement", 13);
+  run_test(test_fsm_control_pulsera_fsmInitFillsStructWithSomething, "test_fsm_control_pulsera_fsmInitFillsStructWithSomething", 19);
+  run_test(test_fsm_control_fsmFireCallsCheckWhenSuspended, "test_fsm_control_fsmFireCallsCheckWhenSuspended", 30);
 
+  CMock_Guts_MemFreeFinal();
   return UnityEnd();
 }
