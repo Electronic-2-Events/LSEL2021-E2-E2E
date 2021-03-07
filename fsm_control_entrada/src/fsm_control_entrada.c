@@ -18,9 +18,16 @@ static void fsm_subir(fsm_t* f){
     fsm_control_entrada_t* fp = (fsm_control_entrada_t *)f;
     fp->subir = 1;
 }
-
+static void fsm_parar(fsm_t* f){
+    fsm_control_entrada_t* fp = (fsm_control_entrada_t *)f;
+    fp->subir = 0;
+}
 static int fsm_s_bar_top(fsm_t* f){
-    
+    if (s_bar_top()==1)
+        return 1;
+    else
+        return 0;
+
 }
 
 static fsm_trans_t entrada_tt[] = {
