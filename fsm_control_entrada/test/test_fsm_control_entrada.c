@@ -10,9 +10,6 @@
 #include "mock_timer.h"
 
 
-#define DEADLINE10 (10)
-#define DEADLINE3 (3)
-
 
 void setUp(void)
 {
