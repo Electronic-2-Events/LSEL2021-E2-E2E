@@ -54,6 +54,16 @@ typedef int (* CMOCK_s_prox_CALLBACK)(int cmock_num_calls);
 void s_prox_AddCallback(CMOCK_s_prox_CALLBACK Callback);
 void s_prox_Stub(CMOCK_s_prox_CALLBACK Callback);
 #define s_prox_StubWithCallback s_prox_Stub
+#define s_bar_bottom_IgnoreAndReturn(cmock_retval) s_bar_bottom_CMockIgnoreAndReturn(__LINE__, cmock_retval)
+void s_bar_bottom_CMockIgnoreAndReturn(UNITY_LINE_TYPE cmock_line, int cmock_to_return);
+#define s_bar_bottom_StopIgnore() s_bar_bottom_CMockStopIgnore()
+void s_bar_bottom_CMockStopIgnore(void);
+#define s_bar_bottom_ExpectAndReturn(cmock_retval) s_bar_bottom_CMockExpectAndReturn(__LINE__, cmock_retval)
+void s_bar_bottom_CMockExpectAndReturn(UNITY_LINE_TYPE cmock_line, int cmock_to_return);
+typedef int (* CMOCK_s_bar_bottom_CALLBACK)(int cmock_num_calls);
+void s_bar_bottom_AddCallback(CMOCK_s_bar_bottom_CALLBACK Callback);
+void s_bar_bottom_Stub(CMOCK_s_bar_bottom_CALLBACK Callback);
+#define s_bar_bottom_StubWithCallback s_bar_bottom_Stub
 
 #if defined(__GNUC__) && !defined(__ICC) && !defined(__TMS470__)
 #if __GNUC__ > 4 || (__GNUC__ == 4 && (__GNUC_MINOR__ > 6 || (__GNUC_MINOR__ == 6 && __GNUC_PATCHLEVEL__ > 0)))
