@@ -23,11 +23,11 @@
   :line: 73
   :message: ''
   :unity_test_time: 0
-:failures:
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse
   :line: 87
-  :message: Function s_bar_top.  Called fewer times than expected.
+  :message: ''
   :unity_test_time: 0
+:failures: []
 :ignores:
 - :test: test_fsm_Inicial
   :line: 21
@@ -35,8 +35,8 @@
   :unity_test_time: 0
 :counts:
   :total: 7
-  :passed: 5
-  :failed: 1
+  :passed: 6
+  :failed: 0
   :ignored: 1
 :stdout: []
-:time: 0.012761500001943205
+:time: 0.012919699998747092

@@ -94,6 +94,8 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopI
     fsm_control_entrada_init(&f);
 
     fsm_fire((fsm_t*)(&f));
+    
+    fsm_fire((fsm_t*)(&f));
 
     TEST_ASSERT(f.fsm.current_state == SUBIENDO);
     TEST_ASSERT(f.subir == 1);
