@@ -69,3 +69,5 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNF
     TEST_ASSERT(f.fsm.current_state == DOWN);
     TEST_ASSERT(f.subir == 0);
 }
+
+//hola
