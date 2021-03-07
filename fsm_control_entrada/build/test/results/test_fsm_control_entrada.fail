@@ -39,4 +39,8 @@
   :failed: 2
   :ignored: 1
 :stdout: []
+<<<<<<< HEAD:fsm_control_entrada/build/test/results/test_fsm_control_entrada.fail
 :time: 0.014672000004793517
+=======
+:time: 0.007896299997810274
+>>>>>>> d08ec7d3b12cd719c8287e5b7c25d20b2b4dd574:fsm_control_entrada/build/test/results/test_fsm_control_entrada.pass
