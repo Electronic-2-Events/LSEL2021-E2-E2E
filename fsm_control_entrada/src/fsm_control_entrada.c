@@ -65,8 +65,10 @@ static void fsm_waiting(fsm_t *f)
     fp->next_timeout = timer() + DEADLINE3;
 }
 
-static int fsm_bajar(fsm_t *f){};
-static int fsm_s_bar_bottom(fsm_t *f){};
+static void fsm_bajar(fsm_t* f){
+    fsm_control_entrada_t* fp = (fsm_control_entrada_t *)f;
+    fp->bajar = 1;
+}
 
 static fsm_trans_t entrada_tt[] = {
     {DOWN, fsm_NFC, SUBIENDO, fsm_subir},
