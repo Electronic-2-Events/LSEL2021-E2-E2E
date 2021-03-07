@@ -56,6 +56,7 @@ static void fsm_parar(fsm_t *f)
 {
     fsm_control_entrada_t *fp = (fsm_control_entrada_t *)f;
     fp->subir = 0;
+    fp->bajar = 0;
     fp->next_timeout = timer() + DEADLINE10;
 }
 
@@ -75,7 +76,7 @@ static fsm_trans_t entrada_tt[] = {
     {SUBIENDO, fsm_s_bar_top, UP, fsm_parar},
     {UP, fsm_timer_timeout, BAJANDO, fsm_bajar},
     {UP, fsm_s_prox, WAITING, fsm_waiting},
-    {WAITING, fsm_timer_timeout, BAJANDO, fsm_parar},
+    {WAITING, fsm_timer_timeout, BAJANDO, fsm_bajar},
     {BAJANDO, fsm_s_bar_bottom, DOWN, fsm_parar},
     {-1, NULL, -1, NULL}};
 
