@@ -8,12 +8,13 @@
 
 
 static fsm_trans_t entrada_tt[] = {
-    {DOWN, ,SUBIENDO, },
+   /* {DOWN, ,SUBIENDO, },
     {SUBIENDO, , UP, },
     {UP, , BAJANDO, },
     {UP, , WAITING, },
     {WAITING, , BAJANDO, },
     {BAJANDO, ,DOWN, },
+    */
     {-1, NULL, -1, NULL}
 };
 

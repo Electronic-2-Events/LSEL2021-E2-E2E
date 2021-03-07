@@ -86,7 +86,9 @@
   :enforce_strict_ordering: true
   :plugins:
   - :ignore
+  - :ignore_arg
   - :callback
+  - :expect_any_args
   :treat_as:
     uint8: HEX8
     uint16: HEX16

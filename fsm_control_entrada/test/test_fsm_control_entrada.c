@@ -16,13 +16,7 @@ void tearDown(void)
 {
 }
 
-void test_fsm_rebound_fsmInitFillsStructWithSomething(void)
+void test_fsm_Inicial(void)
 {
-    fsm_rebound_t zero;
-    fsm_rebound_t f;
-    bzero(&zero, sizeof(fsm_rebound_t));
-    bzero(&f, sizeof(fsm_rebound_t));
-
-    fsm_rebound_init(&f, NULL, NULL, 0);
-    TEST_ASSERT(memcmp(&zero, &f, sizeof(fsm_rebound_t)) != 0);
+    TEST_IGNORE();
 }
