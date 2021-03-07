@@ -2,5 +2,7 @@ Lista de requisitos:
 
 - Init inicializa la estructura de la fsm con algo.
 - En down se llama a NFC
-- Si se llama y es 1 se pasa a subiendo
-- Si se llama y es 0 se queda en down
+{
+- Si se llama y es 1 se pasa a subiendo y subir se pone a 1
+- Si se llama y es 0 se queda en down y subir es 0
+}

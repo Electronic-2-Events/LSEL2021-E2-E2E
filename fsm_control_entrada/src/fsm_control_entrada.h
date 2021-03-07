@@ -7,6 +7,7 @@
 
 struct _fsm_control_entrada_t {
     fsm_t fsm;
+    int subir;
 };
 
 typedef struct _fsm_control_entrada_t fsm_control_entrada_t;

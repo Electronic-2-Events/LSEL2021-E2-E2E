@@ -53,6 +53,8 @@ void test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue(void)
     fsm_fire((fsm_t*)(&f));
 
     TEST_ASSERT(f.fsm.current_state == SUBIENDO);
+    TEST_ASSERT(f.subir == 1);
+
 }
 
 void test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse(void)
@@ -65,4 +67,5 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNF
     fsm_fire((fsm_t*)(&f));
 
     TEST_ASSERT(f.fsm.current_state == DOWN);
+    TEST_ASSERT(f.subir == 0);
 }

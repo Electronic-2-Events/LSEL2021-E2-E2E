@@ -14,9 +14,13 @@ static int fsm_NFC(fsm_t* f){
     else
         return 0;
 }
+static void fsm_subir(fsm_t* f){
+    fsm_control_entrada_t* fp = (fsm_control_entrada_t *)f;
+    fp->subir = 1;
+}
 
 static fsm_trans_t entrada_tt[] = {
-    {DOWN, fsm_NFC ,SUBIENDO, NULL },
+    {DOWN, fsm_NFC ,SUBIENDO, fsm_subir },
    /* {SUBIENDO, , UP, },
     {UP, , BAJANDO, },
     {UP, , WAITING, },
@@ -29,4 +33,5 @@ static fsm_trans_t entrada_tt[] = {
 void fsm_control_entrada_init(fsm_control_entrada_t* f)
 {
     fsm_init((fsm_t*)f, entrada_tt);
+    f->subir = 0;
 }

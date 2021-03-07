@@ -16,7 +16,7 @@
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse
-  :line: 58
+  :line: 60
   :message: ''
   :unity_test_time: 0
 :failures: []
@@ -31,4 +31,4 @@
   :failed: 0
   :ignored: 1
 :stdout: []
-:time: 0.014014400003361516
+:time: 0.011453700004494749

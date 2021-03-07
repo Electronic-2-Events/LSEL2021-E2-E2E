@@ -88,7 +88,7 @@ int main(void)
   run_test(test_fsm_control_entrada_fsmInitFillsStructWithSomething, "test_fsm_control_entrada_fsmInitFillsStructWithSomething", 23);
   run_test(test_fsm_control_entrada_fsmFireCallsNFCWhenDown, "test_fsm_control_entrada_fsmFireCallsNFCWhenDown", 34);
   run_test(test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue, "test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue", 46);
-  run_test(test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse, "test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse", 58);
+  run_test(test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse, "test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse", 60);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();
