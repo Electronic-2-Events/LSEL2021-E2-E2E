@@ -3,13 +3,21 @@
 #include "fsm_control_entrada.h"
 #include "fsm_control_entrada_internal.h"
 
+#include "mock_acciones.h"
+
 #define DEADLINE10 (10)
 #define DEADLINE3 (3)
 
+static int fsm_NFC(fsm_t* f){
+    if (NFC()==1)
+        return 1;
+    else
+        return 0;
+}
 
 static fsm_trans_t entrada_tt[] = {
-   /* {DOWN, ,SUBIENDO, },
-    {SUBIENDO, , UP, },
+    {DOWN, fsm_NFC ,SUBIENDO, NULL },
+   /* {SUBIENDO, , UP, },
     {UP, , BAJANDO, },
     {UP, , WAITING, },
     {WAITING, , BAJANDO, },

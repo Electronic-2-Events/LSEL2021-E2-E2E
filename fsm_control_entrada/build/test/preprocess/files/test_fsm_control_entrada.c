@@ -28,7 +28,7 @@ void tearDown(void)
 
 
 
-void test_fsm_rebound_fsmInitFillsStructWithSomething(void)
+void test_fsm_Inicial(void)
 
 {
 
@@ -37,5 +37,97 @@ void test_fsm_rebound_fsmInitFillsStructWithSomething(void)
    ((void*)0)
 
    ), (UNITY_UINT)(21));
+
+}
+
+void test_fsm_control_entrada_fsmInitFillsStructWithSomething(void)
+
+{
+
+    fsm_control_entrada_t zero;
+
+    fsm_control_entrada_t f;
+
+    bzero(&zero, sizeof(fsm_control_entrada_t));
+
+    bzero(&f, sizeof(fsm_control_entrada_t));
+
+
+
+    fsm_control_entrada_init(&f);
+
+    do {if ((memcmp(&zero, &f, sizeof(fsm_control_entrada_t)) != 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(31)));}} while(0);
+
+}
+
+
+
+void test_fsm_control_entrada_fsmFireCallsNFCWhenDown(void)
+
+{
+
+    fsm_control_entrada_t f;
+
+
+
+    NFC_CMockExpectAndReturn(38, 1);
+
+
+
+    fsm_control_entrada_init(&f);
+
+
+
+    do {if ((f.fsm.current_state == DOWN)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(42)));}} while(0);
+
+    fsm_fire((fsm_t*)(&f));
+
+}
+
+
+
+void test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue(void)
+
+{
+
+    fsm_control_entrada_t f;
+
+
+
+    NFC_CMockExpectAndReturn(50, 1);
+
+
+
+    fsm_control_entrada_init(&f);
+
+    fsm_fire((fsm_t*)(&f));
+
+
+
+    do {if ((f.fsm.current_state == SUBIENDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(55)));}} while(0);
+
+}
+
+
+
+void test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse(void)
+
+{
+
+    fsm_control_entrada_t f;
+
+
+
+    NFC_CMockExpectAndReturn(62, 0);
+
+
+
+    fsm_control_entrada_init(&f);
+
+    fsm_fire((fsm_t*)(&f));
+
+
+
+    do {if ((f.fsm.current_state == DOWN)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(67)));}} while(0);
 
 }

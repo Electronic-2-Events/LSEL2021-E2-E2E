@@ -2,17 +2,33 @@
 :source:
   :path: test
   :file: test_fsm_control_entrada.c
-:successes: []
+:successes:
+- :test: test_fsm_control_entrada_fsmInitFillsStructWithSomething
+  :line: 23
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireCallsNFCWhenDown
+  :line: 34
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue
+  :line: 46
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse
+  :line: 58
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores:
-- :test: test_fsm_rebound_fsmInitFillsStructWithSomething
+- :test: test_fsm_Inicial
   :line: 21
   :message: ''
   :unity_test_time: 0
 :counts:
-  :total: 1
-  :passed: 0
+  :total: 5
+  :passed: 4
   :failed: 0
   :ignored: 1
 :stdout: []
-:time: 0.014040800000657327
+:time: 0.014014400003361516

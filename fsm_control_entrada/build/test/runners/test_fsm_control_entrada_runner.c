@@ -12,7 +12,11 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_fsm_rebound_fsmInitFillsStructWithSomething(void);
+extern void test_fsm_Inicial(void);
+extern void test_fsm_control_entrada_fsmInitFillsStructWithSomething(void);
+extern void test_fsm_control_entrada_fsmFireCallsNFCWhenDown(void);
+extern void test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue(void);
+extern void test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse(void);
 
 
 /*=======Mock Management=====*/
@@ -80,7 +84,11 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("test_fsm_control_entrada.c");
-  run_test(test_fsm_rebound_fsmInitFillsStructWithSomething, "test_fsm_rebound_fsmInitFillsStructWithSomething", 19);
+  run_test(test_fsm_Inicial, "test_fsm_Inicial", 19);
+  run_test(test_fsm_control_entrada_fsmInitFillsStructWithSomething, "test_fsm_control_entrada_fsmInitFillsStructWithSomething", 23);
+  run_test(test_fsm_control_entrada_fsmFireCallsNFCWhenDown, "test_fsm_control_entrada_fsmFireCallsNFCWhenDown", 34);
+  run_test(test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue, "test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue", 46);
+  run_test(test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse, "test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse", 58);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();
