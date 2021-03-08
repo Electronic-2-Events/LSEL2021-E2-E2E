@@ -10,8 +10,8 @@ fsm_detects_no_contact(fsm_t* f)
 {
     fsm_control_pulsera_t* fp = (fsm_control_pulsera_t*)f;
 
-    if (fp->check){
-        return fp->check();
+    if (fp->no_contact){
+        return fp->no_contact();
     }
     return 0;
 }
@@ -25,8 +25,8 @@ fsm_activation(fsm_t* f)
 {
     fsm_control_pulsera_t* fp = (fsm_control_pulsera_t*)f;
 
-    if (fp->check){
-        return fp->check();
+    if (fp->activation){
+        return fp->activation();
     }
     return 0;
 }
@@ -38,9 +38,9 @@ static int
 fsm_get_time(fsm_t* f)
 {
     fsm_control_pulsera_t* fp = (fsm_control_pulsera_t*)f;
-    fp->menu = SHOW_TIME;
-    if (fp->check){
-        return fp->check();
+    
+    if (fp->get_time){
+        return fp->get_time();
     }
     return 0;
 }
@@ -52,8 +52,8 @@ static void
 fsm_activate_NFC_tag(fsm_t* f)
 {
     fsm_control_pulsera_t* fp = (fsm_control_pulsera_t*)f;
-    fp->NFC_active = 1;
     //printf("NFC Activado");
+    fp->NFC_on = 1;
     fp->menu = SHOW_TIME;
     //printf("Mostrar hora en pantalla");
 }
@@ -65,8 +65,8 @@ static void
 fsm_deactivate_NFC_tag(fsm_t* f)
 {
     fsm_control_pulsera_t* fp = (fsm_control_pulsera_t*)f;
-    fp->NFC_active = 0;
-    //printf("NFC Desactivado");
+    //printf("NFC Desactivado")
+    fp->NFC_on = 0;
     fp->menu = SHOW_WARNING;
     //printf("Tienes que ir a un punto de activación para volver a usar la pulsera");
 }
@@ -78,7 +78,6 @@ fsm_deactivate_NFC_tag(fsm_t* f)
 static void
 fsm_show_on_screen_hour(fsm_t* f)
 {
-    
     //printf("Mostrar hora en pantalla");
 }
 
@@ -93,10 +92,14 @@ control_pulsera_tt[] = {
 
 
 /* Inicializacion */
-void fsm_control_pulsera_init(fsm_control_pulsera_t* f, fsm_control_pulsera_check_func_t check)
+
+void fsm_control_pulsera_init(fsm_control_pulsera_t* f, fsm_control_pulsera_get_time_func_t get_time,
+    fsm_control_pulsera_activation_func_t activation, fsm_control_pulsera_detects_no_contact_func_t no_contact)
 {
     fsm_init((fsm_t*)f, control_pulsera_tt);
-    f->check = check;
-    f->NFC_active = 0;
+    f->get_time = get_time;
+    f->activation = activation;
+    f->no_contact = no_contact;
     f->menu = SHOW_WARNING;
+    f->NFC_on = 0;
 }

@@ -14,7 +14,20 @@ char* GlobalOrderError;
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_fsm_control_pulsera_fsmInitFillsStructWithSomething(void);
-extern void test_fsm_control_fsmFireCallsCheckWhenSuspended(void);
+extern void test_fsm_control_fsmInitStartsWithShowAlarm(void);
+extern void test_fsm_control_fsmInitStartsNFCDeactivated(void);
+extern void test_fsm_control_fsmFireCallsActivationWhenSuspended(void);
+extern void test_fsm_control_fsmFireCallsNoContactWhenIdle(void);
+extern void test_fsm_control_fsmFireCallsGetTimeWhenIdle(void);
+extern void test_fsm_control_fsmFireNoCallsNoContactWhenSuspended(void);
+extern void test_fsm_control_fsmFireNoCallsGetTimeWhenSuspended(void);
+extern void test_fsm_control_fsmFireNoCallsActivationWhenIdle(void);
+extern void test_fsm_control_fsmFireFollowsTransitionWhenSuspendedAndActivationIsTrue(void);
+extern void test_fsm_control_fsmFireFollowsTransitionWhenIdleAndNoContactIsTrue(void);
+extern void test_fsm_control_fsmFireFollowsTransitionWhenIdleAndGetTimeIsTrue(void);
+extern void test_fsm_rebound_fsmFireDontFollowTransitionWhenSuspendedAndActivationIsFalse(void);
+extern void test_fsm_rebound_fsmFireDontFollowTransitionWhenIdleAndNoContactIsFalse(void);
+extern void test_fsm_control_pulsera_fsmFireComplete(void);
 
 
 /*=======Mock Management=====*/
@@ -85,8 +98,21 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("test_fsm_control_pulsera.c");
-  run_test(test_fsm_control_pulsera_fsmInitFillsStructWithSomething, "test_fsm_control_pulsera_fsmInitFillsStructWithSomething", 20);
-  run_test(test_fsm_control_fsmFireCallsCheckWhenSuspended, "test_fsm_control_fsmFireCallsCheckWhenSuspended", 32);
+  run_test(test_fsm_control_pulsera_fsmInitFillsStructWithSomething, "test_fsm_control_pulsera_fsmInitFillsStructWithSomething", 21);
+  run_test(test_fsm_control_fsmInitStartsWithShowAlarm, "test_fsm_control_fsmInitStartsWithShowAlarm", 32);
+  run_test(test_fsm_control_fsmInitStartsNFCDeactivated, "test_fsm_control_fsmInitStartsNFCDeactivated", 40);
+  run_test(test_fsm_control_fsmFireCallsActivationWhenSuspended, "test_fsm_control_fsmFireCallsActivationWhenSuspended", 49);
+  run_test(test_fsm_control_fsmFireCallsNoContactWhenIdle, "test_fsm_control_fsmFireCallsNoContactWhenIdle", 60);
+  run_test(test_fsm_control_fsmFireCallsGetTimeWhenIdle, "test_fsm_control_fsmFireCallsGetTimeWhenIdle", 71);
+  run_test(test_fsm_control_fsmFireNoCallsNoContactWhenSuspended, "test_fsm_control_fsmFireNoCallsNoContactWhenSuspended", 83);
+  run_test(test_fsm_control_fsmFireNoCallsGetTimeWhenSuspended, "test_fsm_control_fsmFireNoCallsGetTimeWhenSuspended", 94);
+  run_test(test_fsm_control_fsmFireNoCallsActivationWhenIdle, "test_fsm_control_fsmFireNoCallsActivationWhenIdle", 105);
+  run_test(test_fsm_control_fsmFireFollowsTransitionWhenSuspendedAndActivationIsTrue, "test_fsm_control_fsmFireFollowsTransitionWhenSuspendedAndActivationIsTrue", 118);
+  run_test(test_fsm_control_fsmFireFollowsTransitionWhenIdleAndNoContactIsTrue, "test_fsm_control_fsmFireFollowsTransitionWhenIdleAndNoContactIsTrue", 132);
+  run_test(test_fsm_control_fsmFireFollowsTransitionWhenIdleAndGetTimeIsTrue, "test_fsm_control_fsmFireFollowsTransitionWhenIdleAndGetTimeIsTrue", 148);
+  run_test(test_fsm_rebound_fsmFireDontFollowTransitionWhenSuspendedAndActivationIsFalse, "test_fsm_rebound_fsmFireDontFollowTransitionWhenSuspendedAndActivationIsFalse", 162);
+  run_test(test_fsm_rebound_fsmFireDontFollowTransitionWhenIdleAndNoContactIsFalse, "test_fsm_rebound_fsmFireDontFollowTransitionWhenIdleAndNoContactIsFalse", 175);
+  run_test(test_fsm_control_pulsera_fsmFireComplete, "test_fsm_control_pulsera_fsmFireComplete", 189);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

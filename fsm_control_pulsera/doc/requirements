@@ -1,6 +1,17 @@
 Esta integrado con FSM
 Tiene una funcion que inicialmente rellena una estructura
 
-Cuando se habi
+Inicialmente se empieza en estado SUSPENDED
+En el estado suspended el NFC está desactivado
+Una llamada a fsm_fire en SUSPENDED llamará a la función de guarda de activación
+Se muestra por pantalla un mensaje para proceder a la activación
 
-Una llamada a fsm_fire llama la funcion de guarda
+Cuando se activa la pulsera, se pasa al estado IDLE. 
+Una llamada a fsm_fire en IDLE llamará a las funciones de guarda de get time y no contact
+En el estado IDLE se muestra la hora por pantalla y se activa el NFC
+
+En el estado IDLE, puede llegar una señal getTime, que hace que se actualice la hora de la pantalla
+
+Cuando se detecta que la pulsera no está en contacto con la muñeca, se pasa al estado SUSPENDED
+Cuando se pasa al estado SUSPENDED se desactiva el NFC
+
