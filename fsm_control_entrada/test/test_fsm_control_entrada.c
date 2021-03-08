@@ -172,8 +172,6 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndSProxisFalse(v
     TEST_ASSERT(f.fsm.current_state == UP);
 }
 
-//////////////
-
 void test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndbarbottomisTrue(void)
 {
     fsm_control_entrada_t f;

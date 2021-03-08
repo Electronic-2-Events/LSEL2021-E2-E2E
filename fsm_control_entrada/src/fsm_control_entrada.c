@@ -12,18 +12,22 @@
 //ENTRADAS
 static int fsm_NFC(fsm_t *f)
 {
-    if (NFC() == 1)
-        return 1;
-    else
-        return 0;
+    fsm_control_entrada_t *fp = (fsm_control_entrada_t*) f;
+
+    if (fp->NFC) {
+        return fp->NFC();
+    }
+    return 0;
 }
 
 static int fsm_s_bar_top(fsm_t *f)
 {
-    if (s_bar_top() == 1)
-        return 1;
-    else
-        return 0;
+    fsm_control_entrada_t *fp = (fsm_control_entrada_t*) f;
+
+    if (fp->s_bar_top) {
+        return fp->s_bar_top();
+    }
+    return 0;
 }
 
 static int fsm_timer_timeout(fsm_t *f)
@@ -34,15 +38,22 @@ static int fsm_timer_timeout(fsm_t *f)
 
 static int fsm_s_prox(fsm_t *f)
 {
-    return (s_prox());
+    fsm_control_entrada_t *fp = (fsm_control_entrada_t*) f;
+
+    if (fp->s_prox) {
+        return fp->s_prox();
+    }
+    return 0;
 }
 
-static int fsm_s_bar_bottom(fsm_t* f){
-    if (s_bar_bottom()==1)
-        return 1;
-    else
-        return 0;
+static int fsm_s_bar_bottom(fsm_t *f)
+{
+    fsm_control_entrada_t *fp = (fsm_control_entrada_t*) f;
 
+    if (fp->s_bar_bottom) {
+        return fp->s_bar_bottom();
+    }
+    return 0;
 }
 
 //SALIDAS
@@ -66,8 +77,9 @@ static void fsm_waiting(fsm_t *f)
     fp->next_timeout = timer() + DEADLINE3;
 }
 
-static void fsm_bajar(fsm_t* f){
-    fsm_control_entrada_t* fp = (fsm_control_entrada_t *)f;
+static void fsm_bajar(fsm_t *f)
+{
+    fsm_control_entrada_t *fp = (fsm_control_entrada_t *)f;
     fp->bajar = 1;
 }
 
@@ -80,8 +92,8 @@ static fsm_trans_t entrada_tt[] = {
     {BAJANDO, fsm_s_bar_bottom, DOWN, fsm_parar},
     {-1, NULL, -1, NULL}};
 
-void fsm_control_entrada_init(fsm_control_entrada_t *f,fsm_control_entrada_NFC_func_t NFC, fsm_control_entrada_s_bar_top_func_t s_bar_top,
-fsm_control_entrada_s_prox_func_t s_prox, fsm_control_entrada_s_bar_bottom_func_t s_bar_bottom)
+void fsm_control_entrada_init(fsm_control_entrada_t *f, fsm_control_entrada_NFC_func_t NFC, fsm_control_entrada_s_bar_top_func_t s_bar_top,
+                              fsm_control_entrada_s_prox_func_t s_prox, fsm_control_entrada_s_bar_bottom_func_t s_bar_bottom)
 {
     fsm_init((fsm_t *)f, entrada_tt);
     f->subir = 0;
@@ -90,5 +102,5 @@ fsm_control_entrada_s_prox_func_t s_prox, fsm_control_entrada_s_bar_bottom_func_
     f->NFC = NFC;
     f->s_bar_top = s_bar_top;
     f->s_prox = s_prox;
-    f->s_bar_bottom = s_bar_top;
+    f->s_bar_bottom = s_bar_bottom;
 }

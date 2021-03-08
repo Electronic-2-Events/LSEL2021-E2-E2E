@@ -44,21 +44,21 @@
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndbarbottomisTrue
-  :line: 177
+  :line: 175
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenWaitingAndDeadlineisTrue
-  :line: 209
+  :line: 207
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlineisFalse
-  :line: 225
+  :line: 223
   :message: ''
   :unity_test_time: 0
 :failures:
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbottomisFalse
-  :line: 192
-  :message: Function s_bar_top.  Called more times than expected.
+  :line: 203
+  :message: Expression Evaluated To FALSE
   :unity_test_time: 0
 :ignores:
 - :test: test_fsm_Inicial
@@ -71,4 +71,4 @@
   :failed: 1
   :ignored: 1
 :stdout: []
-:time: 0.015072999999574677
+:time: 0.01334450000013021
