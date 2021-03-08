@@ -39,36 +39,44 @@
   :line: 134
   :message: ''
   :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireCallsTimerAndS_proxWhenUp
+  :line: 153
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireDontCallsAnythingElseWhenUp
+  :line: 169
+  :message: ''
+  :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndDeadlineisTrue
-  :line: 151
+  :line: 182
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndDeadlineisFalse
-  :line: 167
+  :line: 198
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndSProxisTrue
-  :line: 184
+  :line: 215
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndSProxisFalse
-  :line: 201
-  :message: ''
-  :unity_test_time: 0
-- :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndbarbottomisTrue
-  :line: 217
-  :message: ''
-  :unity_test_time: 0
-- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbottomisFalse
   :line: 232
   :message: ''
   :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndbarbottomisTrue
+  :line: 248
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbottomisFalse
+  :line: 263
+  :message: ''
+  :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenWaitingAndDeadlineisTrue
-  :line: 247
+  :line: 278
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlineisFalse
-  :line: 263
+  :line: 294
   :message: ''
   :unity_test_time: 0
 :failures: []
@@ -78,9 +86,9 @@
   :message: ''
   :unity_test_time: 0
 :counts:
-  :total: 18
-  :passed: 17
+  :total: 20
+  :passed: 19
   :failed: 0
   :ignored: 1
 :stdout: []
-:time: 0.012948300000061863
+:time: 0.012903799999548937

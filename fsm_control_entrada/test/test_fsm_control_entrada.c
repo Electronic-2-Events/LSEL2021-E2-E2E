@@ -148,6 +148,37 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopI
     TEST_ASSERT(f.subir == 1);
 }
 
+////////////////////////////////////////////////
+
+void test_fsm_control_entrada_fsmFireCallsTimerAndS_proxWhenUp(void)
+{
+    fsm_control_entrada_t f;
+
+    timer_ExpectAndReturn(0);
+    s_prox_ExpectAndReturn(0);
+
+    fsm_control_entrada_init(&f, NFC, s_bar_top, s_prox, s_bar_bottom);
+    f.fsm.current_state = UP;
+    f.next_timeout = 10;
+
+    fsm_fire((fsm_t *)(&f));
+    TEST_ASSERT(f.fsm.current_state == UP);
+
+}
+
+void test_fsm_control_entrada_fsmFireDontCallsAnythingElseWhenUp(void)
+{
+    fsm_control_entrada_t f;
+
+    timer_ExpectAndReturn(0);
+    s_prox_ExpectAndReturn(0);
+
+    fsm_control_entrada_init(&f, NFC, s_bar_top, s_prox, s_bar_bottom);
+    f.fsm.current_state = UP;
+    f.next_timeout = 10;
+
+    fsm_fire((fsm_t *)(&f));
+}
 void test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndDeadlineisTrue(void)
 {
     fsm_control_entrada_t f;
