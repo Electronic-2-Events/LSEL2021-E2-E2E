@@ -47,19 +47,19 @@
   :line: 175
   :message: ''
   :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbottomisFalse
+  :line: 190
+  :message: ''
+  :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenWaitingAndDeadlineisTrue
-  :line: 207
+  :line: 205
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlineisFalse
-  :line: 223
+  :line: 221
   :message: ''
   :unity_test_time: 0
-:failures:
-- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbottomisFalse
-  :line: 203
-  :message: Expression Evaluated To FALSE
-  :unity_test_time: 0
+:failures: []
 :ignores:
 - :test: test_fsm_Inicial
   :line: 25
@@ -67,8 +67,8 @@
   :unity_test_time: 0
 :counts:
   :total: 15
-  :passed: 13
-  :failed: 1
+  :passed: 14
+  :failed: 0
   :ignored: 1
 :stdout: []
-:time: 0.01334450000013021
+:time: 0.014749400000255264

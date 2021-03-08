@@ -513,11 +513,7 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbotto
 
 
 
-    NFC_CMockIgnoreAndReturn(194, 1);
-
-
-
-    s_bar_bottom_CMockExpectAndReturn(196, 0);
+    s_bar_bottom_CMockExpectAndReturn(194, 0);
 
 
 
@@ -531,17 +527,17 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbotto
 
                                                , s_bar_bottom);
 
+    f.fsm.current_state = BAJANDO;
+
 
 
     fsm_fire((fsm_t *)(&f));
 
-    fsm_fire((fsm_t *)(&f));
 
 
+    do {if ((f.fsm.current_state == BAJANDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(201)));}} while(0);
 
-    do {if ((f.fsm.current_state == BAJANDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(203)));}} while(0);
-
-    do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(204)));}} while(0);
+    do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(202)));}} while(0);
 
 }
 
@@ -555,7 +551,7 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenWaitingAndDeadlineisTru
 
 
 
-    timer_CMockExpectAndReturn(211, 11);
+    timer_CMockExpectAndReturn(209, 11);
 
 
 
@@ -587,9 +583,9 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenWaitingAndDeadlineisTru
 
 
 
-    do {if ((f.fsm.current_state == BAJANDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(219)));}} while(0);
+    do {if ((f.fsm.current_state == BAJANDO)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(217)));}} while(0);
 
-    do {if ((f.bajar == 1)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(220)));}} while(0);
+    do {if ((f.bajar == 1)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(218)));}} while(0);
 
 }
 
@@ -603,9 +599,9 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlinei
 
 
 
-    timer_CMockExpectAndReturn(227, 9);
+    timer_CMockExpectAndReturn(225, 9);
 
-    s_prox_CMockIgnoreAndReturn(228, 0);
+    s_prox_CMockIgnoreAndReturn(226, 0);
 
 
 
@@ -633,8 +629,8 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlinei
 
 
 
-    do {if ((f.fsm.current_state == WAITING)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(236)));}} while(0);
+    do {if ((f.fsm.current_state == WAITING)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(234)));}} while(0);
 
-    do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(237)));}} while(0);
+    do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(235)));}} while(0);
 
 }

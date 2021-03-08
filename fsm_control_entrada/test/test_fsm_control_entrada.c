@@ -191,13 +191,11 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbotto
 {
     fsm_control_entrada_t f;
 
-    NFC_IgnoreAndReturn(1);
-
     s_bar_bottom_ExpectAndReturn(0);
 
     fsm_control_entrada_init(&f, NFC, NULL, NULL, s_bar_bottom);
+    f.fsm.current_state = BAJANDO;
 
-    fsm_fire((fsm_t *)(&f));
     fsm_fire((fsm_t *)(&f));
 
     TEST_ASSERT(f.fsm.current_state == BAJANDO);
