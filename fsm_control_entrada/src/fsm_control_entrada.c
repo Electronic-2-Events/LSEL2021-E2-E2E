@@ -29,11 +29,11 @@
 static int fsm_NFC(fsm_t *f)
 {
     fsm_control_entrada_t *fp = (fsm_control_entrada_t*) f;
-    int *p = identificadores;
+    int *p = valid;
     fp->id = NFC();
     int variable=0;
 
-    for(int i=0;i<sizeof(identificadores);i++){ 
+    for(int i=0;i<sizeof(valid);i++){ 
         
        if(memcmp((p+i),&(fp->id), sizeof(int)) == 0){
 

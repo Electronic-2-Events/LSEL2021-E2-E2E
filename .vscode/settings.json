@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "*.vhd": "vhdl",
-        "stddef.h": "c"
-    }
-}

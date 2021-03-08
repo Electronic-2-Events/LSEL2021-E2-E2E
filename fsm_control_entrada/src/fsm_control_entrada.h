@@ -11,7 +11,7 @@ typedef int (*fsm_control_entrada_s_prox_func_t) (void);
 typedef int (*fsm_control_entrada_s_bar_bottom_func_t) (void);
 
 
-int identificadores[4] = {4545, 1111, 2442, 8943}; 
+int valid[4] = {4545, 1111, 2442, 8943}; 
 
 
 struct _fsm_control_entrada_t
