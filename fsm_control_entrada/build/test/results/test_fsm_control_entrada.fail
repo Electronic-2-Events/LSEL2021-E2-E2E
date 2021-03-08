@@ -43,8 +43,16 @@
   :line: 163
   :message: ''
   :unity_test_time: 0
-- :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndsbarbottomisTrue
+- :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndbarbottomisTrue
   :line: 181
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenWaitingAndDeadlineisTrue
+  :line: 215
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlineisFalse
+  :line: 231
   :message: ''
   :unity_test_time: 0
 :failures:
@@ -58,9 +66,13 @@
   :message: ''
   :unity_test_time: 0
 :counts:
-  :total: 13
-  :passed: 11
+  :total: 15
+  :passed: 13
   :failed: 1
   :ignored: 1
 :stdout: []
+<<<<<<< HEAD
 :time: 0.013103700000101526
+=======
+:time: 0.017306199995800853
+>>>>>>> 8aa84fcc8525ecc474255a7ca38e43badaa7c4cc
