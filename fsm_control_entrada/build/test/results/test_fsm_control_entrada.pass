@@ -4,59 +4,71 @@
   :file: test_fsm_control_entrada.c
 :successes:
 - :test: test_fsm_control_entrada_fsmInitFillsStructWithSomething
-  :line: 27
+  :line: 29
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireCallsNFCWhenDown
-  :line: 38
+  :line: 42
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireDontCallsAnythingElseWhenDown
+  :line: 53
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue
-  :line: 50
+  :line: 64
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse
-  :line: 63
+  :line: 77
   :message: ''
   :unity_test_time: 0
-- :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTrue
-  :line: 76
-  :message: ''
-  :unity_test_time: 0
-- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse
+- :test: test_fsm_control_entrada_fsmFireCallsS_bar_topWhenSubiendo
   :line: 92
   :message: ''
   :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireDontCallsAnythingElseWhenSubiendo
+  :line: 106
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTrue
+  :line: 118
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse
+  :line: 134
+  :message: ''
+  :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndDeadlineisTrue
-  :line: 109
+  :line: 151
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndDeadlineisFalse
-  :line: 125
+  :line: 167
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndSProxisTrue
-  :line: 142
+  :line: 184
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndSProxisFalse
-  :line: 159
+  :line: 201
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndbarbottomisTrue
-  :line: 175
+  :line: 217
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbottomisFalse
-  :line: 190
+  :line: 232
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenWaitingAndDeadlineisTrue
-  :line: 205
+  :line: 247
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlineisFalse
-  :line: 221
+  :line: 263
   :message: ''
   :unity_test_time: 0
 :failures: []
@@ -66,9 +78,9 @@
   :message: ''
   :unity_test_time: 0
 :counts:
-  :total: 15
-  :passed: 14
+  :total: 18
+  :passed: 17
   :failed: 0
   :ignored: 1
 :stdout: []
-:time: 0.014749400000255264
+:time: 0.012948300000061863

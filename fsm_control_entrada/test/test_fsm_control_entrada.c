@@ -24,6 +24,8 @@ void test_fsm_Inicial(void)
 {
     TEST_IGNORE();
 }
+
+////////////////////////////////////////////////////
 void test_fsm_control_entrada_fsmInitFillsStructWithSomething(void)
 {
     fsm_control_entrada_t zero;
@@ -35,15 +37,27 @@ void test_fsm_control_entrada_fsmInitFillsStructWithSomething(void)
     TEST_ASSERT(memcmp(&zero, &f, sizeof(fsm_control_entrada_t)) != 0);
 }
 
+////////////////////////////////////////////////////
+
 void test_fsm_control_entrada_fsmFireCallsNFCWhenDown(void)
 {
     fsm_control_entrada_t f;
 
     NFC_ExpectAndReturn(1);
 
-    fsm_control_entrada_init(&f, NFC, NULL, NULL, NULL);
+    fsm_control_entrada_init(&f, NFC, s_bar_top, s_prox, s_bar_bottom);
 
     TEST_ASSERT(f.fsm.current_state == DOWN);
+    fsm_fire((fsm_t *)(&f));
+}
+void test_fsm_control_entrada_fsmFireDontCallsAnythingElseWhenDown(void)
+{
+    fsm_control_entrada_t f;
+
+    NFC_ExpectAndReturn(0);
+
+    fsm_control_entrada_init(&f, NFC, s_bar_top, s_prox, s_bar_bottom);
+
     fsm_fire((fsm_t *)(&f));
 }
 
@@ -71,6 +85,34 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNF
 
     TEST_ASSERT(f.fsm.current_state == DOWN);
     TEST_ASSERT(f.subir == 0);
+}
+
+////////////////////////////////////////////////////
+
+void test_fsm_control_entrada_fsmFireCallsS_bar_topWhenSubiendo(void)
+{
+    fsm_control_entrada_t f;
+
+    s_bar_top_ExpectAndReturn(1);
+    timer_ExpectAndReturn(10);
+
+    fsm_control_entrada_init(&f, NFC, s_bar_top, s_prox, s_bar_bottom);
+    f.fsm.current_state = SUBIENDO;
+
+    fsm_fire((fsm_t *)(&f));
+    TEST_ASSERT(f.fsm.current_state == UP);
+
+}
+void test_fsm_control_entrada_fsmFireDontCallsAnythingElseWhenSubiendo(void)
+{
+    fsm_control_entrada_t f;
+
+    s_bar_top_ExpectAndReturn(0);
+
+    fsm_control_entrada_init(&f, NFC, s_bar_top, s_prox, s_bar_bottom);
+    f.fsm.current_state = SUBIENDO;
+
+    fsm_fire((fsm_t *)(&f));
 }
 
 void test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTrue(void)
