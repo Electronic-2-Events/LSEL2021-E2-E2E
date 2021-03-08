@@ -65,7 +65,23 @@ void test_fsm_control_entrada_fsmInitFillsStructWithSomething(void)
 
 
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, 
+
+                                ((void*)0)
+
+                                    , 
+
+                                      ((void*)0)
+
+                                          , 
+
+                                            ((void*)0)
+
+                                                , 
+
+                                                  ((void*)0)
+
+                                                      );
 
     do {if ((memcmp(&zero, &f, sizeof(fsm_control_entrada_t)) != 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(37)));}} while(0);
 
@@ -85,7 +101,19 @@ void test_fsm_control_entrada_fsmFireCallsNFCWhenDown(void)
 
 
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NFC, 
+
+                                     ((void*)0)
+
+                                         ,
+
+                                          ((void*)0)
+
+                                              ,
+
+                                               ((void*)0)
+
+                                                   );
 
 
 
@@ -109,7 +137,19 @@ void test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue(void)
 
 
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NFC, 
+
+                                     ((void*)0)
+
+                                         , 
+
+                                           ((void*)0)
+
+                                               , 
+
+                                                 ((void*)0)
+
+                                                     );
 
     fsm_fire((fsm_t*)(&f));
 
@@ -137,7 +177,19 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNF
 
 
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NFC, 
+
+                                     ((void*)0)
+
+                                         , 
+
+                                           ((void*)0)
+
+                                               , 
+
+                                                 ((void*)0)
+
+                                                     );
 
     fsm_fire((fsm_t*)(&f));
 
@@ -165,7 +217,15 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTru
 
 
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NFC, s_bar_top, 
+
+                                                ((void*)0)
+
+                                                    , 
+
+                                                      ((void*)0)
+
+                                                          );
 
     f.fsm.current_state = SUBIENDO;
 
@@ -199,7 +259,15 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopI
 
 
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NFC, s_bar_top, 
+
+                                                ((void*)0)
+
+                                                    , 
+
+                                                      ((void*)0)
+
+                                                          );
 
 
 
@@ -231,7 +299,23 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndDeadlineisTrue(voi
 
 
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, 
+
+                                ((void*)0)
+
+                                    , 
+
+                                      ((void*)0)
+
+                                          , 
+
+                                            ((void*)0)
+
+                                                , 
+
+                                                  ((void*)0)
+
+                                                      );
 
     f.next_timeout = 10;
 
@@ -265,7 +349,19 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndDeadlineisFals
 
 
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, 
+
+                                ((void*)0)
+
+                                    , 
+
+                                      ((void*)0)
+
+                                          , s_prox, 
+
+                                                    ((void*)0)
+
+                                                        );
 
     f.next_timeout = 10;
 
@@ -299,7 +395,19 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndSProxisTrue(void)
 
 
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, 
+
+                                ((void*)0)
+
+                                    , 
+
+                                      ((void*)0)
+
+                                          , s_prox, 
+
+                                                    ((void*)0)
+
+                                                        );
 
     f.next_timeout = 10;
 
@@ -333,7 +441,19 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndSProxisFalse(v
 
 
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, 
+
+                                ((void*)0)
+
+                                    , 
+
+                                      ((void*)0)
+
+                                          , s_prox, 
+
+                                                    ((void*)0)
+
+                                                        );
 
     f.next_timeout = 10;
 
@@ -369,7 +489,19 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndsbarbottomisT
 
 
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, 
+
+                                ((void*)0)
+
+                                    , 
+
+                                      ((void*)0)
+
+                                          , 
+
+                                            ((void*)0)
+
+                                                , s_bar_bottom);
 
     f.fsm.current_state = BAJANDO;
 
@@ -401,7 +533,15 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbotto
 
 
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NFC, 
+
+                                     ((void*)0)
+
+                                         , 
+
+                                           ((void*)0)
+
+                                               , s_bar_bottom);
 
 
 

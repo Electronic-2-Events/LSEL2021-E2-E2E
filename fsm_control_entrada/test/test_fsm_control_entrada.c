@@ -33,7 +33,7 @@ void test_fsm_control_entrada_fsmInitFillsStructWithSomething(void)
     bzero(&zero, sizeof(fsm_control_entrada_t));
     bzero(&f, sizeof(fsm_control_entrada_t));
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NULL, NULL, NULL, NULL);
     TEST_ASSERT(memcmp(&zero, &f, sizeof(fsm_control_entrada_t)) != 0);
 }
 
@@ -43,7 +43,7 @@ void test_fsm_control_entrada_fsmFireCallsNFCWhenDown(void)
 
     NFC_ExpectAndReturn(1);
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NFC, NULL,NULL,NULL);
 
     TEST_ASSERT(f.fsm.current_state == DOWN);
     fsm_fire((fsm_t*)(&f));
@@ -55,7 +55,7 @@ void test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue(void)
 
     NFC_ExpectAndReturn(1);
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NFC, NULL, NULL, NULL);
     fsm_fire((fsm_t*)(&f));
 
     TEST_ASSERT(f.fsm.current_state == SUBIENDO);
@@ -69,7 +69,7 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNF
 
     NFC_ExpectAndReturn(0);
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NFC, NULL, NULL, NULL);
     fsm_fire((fsm_t*)(&f));
 
     TEST_ASSERT(f.fsm.current_state == DOWN);
@@ -83,7 +83,7 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTru
     s_bar_top_ExpectAndReturn(1);
     timer_ExpectAndReturn(0);
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NFC, s_bar_top, NULL, NULL);
     f.fsm.current_state = SUBIENDO;
     fsm_fire((fsm_t*)(&f));
 
@@ -100,7 +100,7 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopI
     NFC_IgnoreAndReturn(1);
     s_bar_top_ExpectAndReturn(0);
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NFC, s_bar_top, NULL, NULL);
 
     fsm_fire((fsm_t*)(&f));
 
@@ -116,7 +116,7 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndDeadlineisTrue(voi
     
     timer_ExpectAndReturn(12);
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NULL, NULL, NULL, NULL);
     f.next_timeout = 10;
     f.fsm.current_state = UP;
 
@@ -133,7 +133,7 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndDeadlineisFals
     timer_ExpectAndReturn(8);
     s_prox_IgnoreAndReturn(0);
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NULL, NULL, s_prox, NULL);
     f.next_timeout = 10;
     f.fsm.current_state = UP;
 
@@ -150,7 +150,7 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndSProxisTrue(void)
     timer_IgnoreAndReturn(1);
     s_prox_IgnoreAndReturn(1);
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NULL, NULL, s_prox, NULL);
     f.next_timeout = 10;
     f.fsm.current_state = UP;
 
@@ -167,7 +167,7 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndSProxisFalse(v
     timer_IgnoreAndReturn(1);
     s_prox_IgnoreAndReturn(0);
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NULL, NULL, s_prox, NULL);
     f.next_timeout = 10;
     f.fsm.current_state = UP;
 
@@ -185,7 +185,7 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndsbarbottomisT
     timer_IgnoreAndReturn(1);
     s_bar_bottom_ExpectAndReturn(1);
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NULL, NULL, NULL, s_bar_bottom);
     f.fsm.current_state = BAJANDO;
     fsm_fire((fsm_t*)(&f));
 
@@ -201,7 +201,7 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbotto
     
     s_bar_bottom_ExpectAndReturn(0);
 
-    fsm_control_entrada_init(&f);
+    fsm_control_entrada_init(&f, NFC, NULL, NULL, s_bar_bottom);
 
     fsm_fire((fsm_t*)(&f));
     fsm_fire((fsm_t*)(&f));

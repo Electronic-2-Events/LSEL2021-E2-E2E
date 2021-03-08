@@ -80,10 +80,15 @@ static fsm_trans_t entrada_tt[] = {
     {BAJANDO, fsm_s_bar_bottom, DOWN, fsm_parar},
     {-1, NULL, -1, NULL}};
 
-void fsm_control_entrada_init(fsm_control_entrada_t *f)
+void fsm_control_entrada_init(fsm_control_entrada_t *f,fsm_control_entrada_NFC_func_t NFC, fsm_control_entrada_s_bar_top_func_t s_bar_top,
+fsm_control_entrada_s_prox_func_t s_prox, fsm_control_entrada_s_bar_bottom_func_t s_bar_bottom)
 {
     fsm_init((fsm_t *)f, entrada_tt);
     f->subir = 0;
     f->bajar = 0;
     f->next_timeout = 0;
+    f->NFC = NFC;
+    f->s_bar_top = s_bar_top;
+    f->s_prox = s_prox;
+    f->s_bar_bottom = s_bar_top;
 }
