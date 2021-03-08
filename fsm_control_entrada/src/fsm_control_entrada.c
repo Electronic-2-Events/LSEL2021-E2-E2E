@@ -1,5 +1,4 @@
 #include <stddef.h>
-#include <string.h>
 
 #include "fsm_control_entrada.h"
 #include "fsm_control_entrada_internal.h"
@@ -10,39 +9,15 @@
 #define DEADLINE10 (10)
 #define DEADLINE3 (3)
 
- 
-
-//Comparar identificador con array
-
-// static int fsm_compare_NFC_ID(fsm_t *f)
-// {
-//     fsm_control_entrada_t *fp = (fsm_control_entrada_t*) f;
-
-//     if (fp->ID) {
-//         return fp->ID();
-//     }
-//     return 0;
-// }
-
-
 //ENTRADAS
 static int fsm_NFC(fsm_t *f)
 {
     fsm_control_entrada_t *fp = (fsm_control_entrada_t*) f;
-    int *p = valid;
-    fp->id = NFC();
-    int variable=0;
 
-    for(int i=0;i<sizeof(valid);i++){ 
-        
-       if(memcmp((p+i),&(fp->id), sizeof(int)) == 0){
-
-           variable= 1;
-       }      
+    if (fp->NFC) {
+        return fp->NFC();
     }
-
-    return variable;
-
+    return 0;
 }
 
 static int fsm_s_bar_top(fsm_t *f)

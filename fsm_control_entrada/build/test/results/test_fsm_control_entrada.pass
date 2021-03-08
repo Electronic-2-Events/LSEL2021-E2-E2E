@@ -15,6 +15,10 @@
   :line: 50
   :message: ''
   :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse
+  :line: 63
+  :message: ''
+  :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTrue
   :line: 76
   :message: ''
@@ -55,24 +59,16 @@
   :line: 221
   :message: ''
   :unity_test_time: 0
-:failures:
-- :test: test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse
-  :line: 72
-  :message: Expression Evaluated To FALSE
-  :unity_test_time: 0
-- :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenDownAndNFCIDisValid
-  :line: 240
-  :message: Function NFC.  Called more times than expected.
-  :unity_test_time: 0
+:failures: []
 :ignores:
 - :test: test_fsm_Inicial
   :line: 25
   :message: ''
   :unity_test_time: 0
 :counts:
-  :total: 16
-  :passed: 13
-  :failed: 2
+  :total: 15
+  :passed: 14
+  :failed: 0
   :ignored: 1
 :stdout: []
-:time: 0.015648000000510365
+:time: 0.02214559999993071

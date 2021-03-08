@@ -27,24 +27,3 @@ Lista de requisitos:
     - Si se llama y es 0, permanece en bajando 
 
 }
-
--En waiting:
-{
-    - Se pasa a bajando si se ha superado el deadline correspondiente, bajar se pone a 1
-    - Si aun no ha pasado el tiempo asignado, se permanece en waiting
-}
-
-- En bajando se llama a s_bar_bottom
-{
-    - Si se llama y es 1 se pasa a DOWN
-    - Si se llama y es 0, permanece en bajando 
-
-}
-
-
--Requisitos de seguridad del NFC
-{
-    - Solamente pasar a subiendo si se detecta un ID válido del NFC
-    - En caso contrario, permanecer en estado down
-
-}

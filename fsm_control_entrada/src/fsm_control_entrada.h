@@ -10,10 +10,6 @@ typedef int (*fsm_control_entrada_s_bar_top_func_t) (void);
 typedef int (*fsm_control_entrada_s_prox_func_t) (void);
 typedef int (*fsm_control_entrada_s_bar_bottom_func_t) (void);
 
-
-int valid[4] = {4545, 1111, 2442, 8943}; 
-
-
 struct _fsm_control_entrada_t
 {
     fsm_t fsm;
@@ -24,8 +20,6 @@ struct _fsm_control_entrada_t
     int subir;
     int bajar;
     uint32_t next_timeout;
-    int id;
-
 };
 
 typedef struct _fsm_control_entrada_t fsm_control_entrada_t;

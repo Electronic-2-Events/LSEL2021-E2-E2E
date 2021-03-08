@@ -51,7 +51,7 @@ void test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue(void)
 {
     fsm_control_entrada_t f;
 
-    NFC_ExpectAndReturn(4545);
+    NFC_ExpectAndReturn(1);
 
     fsm_control_entrada_init(&f, NFC, NULL, NULL, NULL);
     fsm_fire((fsm_t *)(&f));
@@ -233,21 +233,4 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlinei
 
     TEST_ASSERT(f.fsm.current_state == WAITING);
     TEST_ASSERT(f.bajar == 0);
-}
-
-//Seguridad id NFC
-
-void test_fsm_control_entrada_fsmFireFollowTransitionWhenDownAndNFCIDisValid(void)
-{
-    fsm_control_entrada_t f;
-
-    
-    fsm_control_entrada_init(&f, NULL, NULL, NULL, NULL);
-    
-    f.fsm.current_state = DOWN;
-
-    fsm_fire((fsm_t *)(&f));
-
-    //TEST_ASSERT(f.fsm.current_state == SUBIENDO);
-    
 }
