@@ -1,4 +1,5 @@
 #include <stddef.h>
+#include <string.h>
 
 #include "fsm_control_entrada.h"
 #include "fsm_control_entrada_internal.h"
@@ -9,30 +10,39 @@
 #define DEADLINE10 (10)
 #define DEADLINE3 (3)
 
-int identificadores[4] = {4545, 1111, 2442, 8943};  
+ 
 
 //Comparar identificador con array
 
-static int fsm_compare_NFC_ID(fsm_t *f)
-{
-    fsm_control_entrada_t *fp = (fsm_control_entrada_t*) f;
+// static int fsm_compare_NFC_ID(fsm_t *f)
+// {
+//     fsm_control_entrada_t *fp = (fsm_control_entrada_t*) f;
 
-    if (fp->ID) {
-        return fp->ID();
-    }
-    return 0;
-}
+//     if (fp->ID) {
+//         return fp->ID();
+//     }
+//     return 0;
+// }
 
 
 //ENTRADAS
 static int fsm_NFC(fsm_t *f)
 {
     fsm_control_entrada_t *fp = (fsm_control_entrada_t*) f;
+    int *p = identificadores;
+    fp->id = NFC();
+    int variable=0;
 
-    if (fp->NFC) {
-        return fp->NFC();
+    for(int i=0;i<sizeof(identificadores);i++){ 
+        
+       if(memcmp((p+i),&(fp->id), sizeof(int)) == 0){
+
+           variable= 1;
+       }      
     }
-    return 0;
+
+    return variable;
+
 }
 
 static int fsm_s_bar_top(fsm_t *f)
@@ -108,7 +118,7 @@ static fsm_trans_t entrada_tt[] = {
     {-1, NULL, -1, NULL}};
 
 void fsm_control_entrada_init(fsm_control_entrada_t *f, fsm_control_entrada_NFC_func_t NFC, fsm_control_entrada_s_bar_top_func_t s_bar_top,
-                              fsm_control_entrada_s_prox_func_t s_prox, fsm_control_entrada_s_bar_bottom_func_t s_bar_bottom,fsm_control_compare_NFC_ID)
+                              fsm_control_entrada_s_prox_func_t s_prox, fsm_control_entrada_s_bar_bottom_func_t s_bar_bottom)
 {
     fsm_init((fsm_t *)f, entrada_tt);
     f->subir = 0;

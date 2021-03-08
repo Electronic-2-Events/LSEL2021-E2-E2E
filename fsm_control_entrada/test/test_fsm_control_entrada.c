@@ -51,7 +51,7 @@ void test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue(void)
 {
     fsm_control_entrada_t f;
 
-    NFC_ExpectAndReturn(1);
+    NFC_ExpectAndReturn(4545);
 
     fsm_control_entrada_init(&f, NFC, NULL, NULL, NULL);
     fsm_fire((fsm_t *)(&f));

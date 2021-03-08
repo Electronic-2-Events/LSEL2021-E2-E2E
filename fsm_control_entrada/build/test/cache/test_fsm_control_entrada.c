@@ -129,7 +129,7 @@ void test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue(void)
 
 
 
-    NFC_CMockExpectAndReturn(54, 1);
+    NFC_CMockExpectAndReturn(54, 4545);
 
 
 
