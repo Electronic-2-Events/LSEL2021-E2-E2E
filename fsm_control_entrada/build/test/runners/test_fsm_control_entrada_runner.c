@@ -28,6 +28,7 @@ extern void test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndbarbot
 extern void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbottomisFalse(void);
 extern void test_fsm_control_entrada_fsmFireFollowTransitionWhenWaitingAndDeadlineisTrue(void);
 extern void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlineisFalse(void);
+extern void test_fsm_control_entrada_fsmFireFollowTransitionWhenDownAndNFCIDisValid(void);
 
 
 /*=======Mock Management=====*/
@@ -113,6 +114,7 @@ int main(void)
   run_test(test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbottomisFalse, "test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbottomisFalse", 190);
   run_test(test_fsm_control_entrada_fsmFireFollowTransitionWhenWaitingAndDeadlineisTrue, "test_fsm_control_entrada_fsmFireFollowTransitionWhenWaitingAndDeadlineisTrue", 205);
   run_test(test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlineisFalse, "test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlineisFalse", 221);
+  run_test(test_fsm_control_entrada_fsmFireFollowTransitionWhenDownAndNFCIDisValid, "test_fsm_control_entrada_fsmFireFollowTransitionWhenDownAndNFCIDisValid", 240);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

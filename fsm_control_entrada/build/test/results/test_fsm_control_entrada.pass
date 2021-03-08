@@ -59,6 +59,10 @@
   :line: 221
   :message: ''
   :unity_test_time: 0
+- :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenDownAndNFCIDisValid
+  :line: 240
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores:
 - :test: test_fsm_Inicial
@@ -66,9 +70,9 @@
   :message: ''
   :unity_test_time: 0
 :counts:
-  :total: 15
-  :passed: 14
+  :total: 16
+  :passed: 15
   :failed: 0
   :ignored: 1
 :stdout: []
-:time: 0.008162999991327524
+:time: 0.007291199988685548

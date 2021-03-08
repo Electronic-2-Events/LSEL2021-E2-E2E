@@ -634,3 +634,53 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlinei
     do {if ((f.bajar == 0)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(235)));}} while(0);
 
 }
+
+
+
+
+
+
+
+void test_fsm_control_entrada_fsmFireFollowTransitionWhenDownAndNFCIDisValid(void)
+
+{
+
+    fsm_control_entrada_t f;
+
+
+
+
+
+    fsm_control_entrada_init(&f, 
+
+                                ((void*)0)
+
+                                    , 
+
+                                      ((void*)0)
+
+                                          , 
+
+                                            ((void*)0)
+
+                                                , 
+
+                                                  ((void*)0)
+
+                                                      );
+
+
+
+    f.fsm.current_state = DOWN;
+
+
+
+    fsm_fire((fsm_t *)(&f));
+
+
+
+
+
+
+
+}

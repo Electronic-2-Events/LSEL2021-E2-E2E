@@ -40,3 +40,11 @@ Lista de requisitos:
     - Si se llama y es 0, permanece en bajando 
 
 }
+
+
+-Requisitos de seguridad del NFC
+{
+    - Solamente pasar a subiendo si se detecta un ID válido del NFC
+    - En caso contrario, permanecer en estado down
+
+}
