@@ -4,65 +4,65 @@
   :file: test_fsm_control_entrada.c
 :successes:
 - :test: test_fsm_control_entrada_fsmInitFillsStructWithSomething
-  :line: 29
+  :line: 27
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireCallsNFCWhenDown
-  :line: 40
+  :line: 38
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue
-  :line: 52
+  :line: 50
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNFCIsFalse
-  :line: 66
+  :line: 63
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTrue
-  :line: 79
+  :line: 76
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse
-  :line: 96
+  :line: 92
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndDeadlineisTrue
-  :line: 113
+  :line: 109
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndDeadlineisFalse
-  :line: 129
+  :line: 125
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndSProxisTrue
-  :line: 146
+  :line: 142
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndSProxisFalse
-  :line: 163
+  :line: 159
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndbarbottomisTrue
-  :line: 181
+  :line: 177
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenWaitingAndDeadlineisTrue
-  :line: 215
+  :line: 209
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlineisFalse
-  :line: 231
+  :line: 225
   :message: ''
   :unity_test_time: 0
 :failures:
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbottomisFalse
-  :line: 196
+  :line: 192
   :message: Function s_bar_top.  Called more times than expected.
   :unity_test_time: 0
 :ignores:
 - :test: test_fsm_Inicial
-  :line: 27
+  :line: 25
   :message: ''
   :unity_test_time: 0
 :counts:
@@ -71,8 +71,4 @@
   :failed: 1
   :ignored: 1
 :stdout: []
-<<<<<<< HEAD
-:time: 0.013103700000101526
-=======
-:time: 0.017306199995800853
->>>>>>> 8aa84fcc8525ecc474255a7ca38e43badaa7c4cc
+:time: 0.015072999999574677
