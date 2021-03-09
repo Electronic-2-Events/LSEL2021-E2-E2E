@@ -28,35 +28,35 @@
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndDeadlineisTrue
-  :line: 109
+  :line: 107
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndDeadlineisFalse
-  :line: 125
+  :line: 123
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenUPAndSProxisTrue
-  :line: 142
+  :line: 140
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenUPAndSProxisFalse
-  :line: 159
+  :line: 157
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenBajandoAndbarbottomisTrue
-  :line: 175
+  :line: 173
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenBajandoAndsbarbottomisFalse
-  :line: 190
+  :line: 188
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireFollowTransitionWhenWaitingAndDeadlineisTrue
-  :line: 205
+  :line: 203
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_control_entrada_fsmFireDontFollowTransitionWhenWaitingAndDeadlineisFalse
-  :line: 221
+  :line: 219
   :message: ''
   :unity_test_time: 0
 :failures: []
@@ -71,4 +71,4 @@
   :failed: 0
   :ignored: 1
 :stdout: []
-:time: 0.02214559999993071
+:time: 0.012931299999763723

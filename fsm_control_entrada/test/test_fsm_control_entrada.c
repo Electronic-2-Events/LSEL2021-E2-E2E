@@ -51,7 +51,7 @@ void test_fsm_control_entrada_fsmFireFollowsTransitionWhenDownAndNFCIsTrue(void)
 {
     fsm_control_entrada_t f;
 
-    NFC_ExpectAndReturn(1);
+    NFC_ExpectAndReturn(2);
 
     fsm_control_entrada_init(&f, NFC, NULL, NULL, NULL);
     fsm_fire((fsm_t *)(&f));
@@ -64,7 +64,7 @@ void test_fsm_control_entrada_fsmFireDontFollowTransitionTransitionWhenDownAndNF
 {
     fsm_control_entrada_t f;
 
-    NFC_ExpectAndReturn(0);
+    NFC_ExpectAndReturn(10);
 
     fsm_control_entrada_init(&f, NFC, NULL, NULL, NULL);
     fsm_fire((fsm_t *)(&f));
@@ -92,13 +92,11 @@ void test_fsm_control_entrada_fsmFireFollowTransitionWhenSubiendoAndsbartopisTru
 void test_fsm_control_entrada_fsmFireDontFollowTransitionWhenSubiendoAndsbartopIsFalse(void)
 {
     fsm_control_entrada_t f;
-
-    NFC_IgnoreAndReturn(1);
     s_bar_top_ExpectAndReturn(0);
 
     fsm_control_entrada_init(&f, NFC, s_bar_top, NULL, NULL);
-
-    fsm_fire((fsm_t *)(&f));
+    f.fsm.current_state = SUBIENDO;
+    f.subir = 1;
 
     fsm_fire((fsm_t *)(&f));
 

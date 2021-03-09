@@ -5,6 +5,7 @@
 
 #include "acciones.h"
 #include "timer.h"
+#include "users.h"
 
 #define DEADLINE10 (10)
 #define DEADLINE3 (3)
@@ -12,19 +13,28 @@
 //ENTRADAS
 static int fsm_NFC(fsm_t *f)
 {
-    fsm_control_entrada_t *fp = (fsm_control_entrada_t*) f;
+    fsm_control_entrada_t *fp = (fsm_control_entrada_t *)f;
 
-    if (fp->NFC) {
-        return fp->NFC();
+    if (fp->NFC)
+    {
+        int id = NFC();
+        for (int i = 0; i < sizeof(valid)-1; i++)
+        {
+            if (valid[i] == id)
+            {
+                return 1;
+            };
+        }
     }
     return 0;
 }
 
 static int fsm_s_bar_top(fsm_t *f)
 {
-    fsm_control_entrada_t *fp = (fsm_control_entrada_t*) f;
+    fsm_control_entrada_t *fp = (fsm_control_entrada_t *)f;
 
-    if (fp->s_bar_top) {
+    if (fp->s_bar_top)
+    {
         return fp->s_bar_top();
     }
     return 0;
@@ -38,9 +48,10 @@ static int fsm_timer_timeout(fsm_t *f)
 
 static int fsm_s_prox(fsm_t *f)
 {
-    fsm_control_entrada_t *fp = (fsm_control_entrada_t*) f;
+    fsm_control_entrada_t *fp = (fsm_control_entrada_t *)f;
 
-    if (fp->s_prox) {
+    if (fp->s_prox)
+    {
         return fp->s_prox();
     }
     return 0;
@@ -48,9 +59,10 @@ static int fsm_s_prox(fsm_t *f)
 
 static int fsm_s_bar_bottom(fsm_t *f)
 {
-    fsm_control_entrada_t *fp = (fsm_control_entrada_t*) f;
+    fsm_control_entrada_t *fp = (fsm_control_entrada_t *)f;
 
-    if (fp->s_bar_bottom) {
+    if (fp->s_bar_bottom)
+    {
         return fp->s_bar_bottom();
     }
     return 0;
