@@ -102,7 +102,7 @@ int main(void)
   run_test(test_fsm_gestioncolas_fsmFireNoCallsSolicitudColaWhenWaiting, "test_fsm_gestioncolas_fsmFireNoCallsSolicitudColaWhenWaiting", 81);
   run_test(test_fsm_gestioncolas_fsmFireNoCallsTerminadoWhenReady, "test_fsm_gestioncolas_fsmFireNoCallsTerminadoWhenReady", 92);
   run_test(test_fsm_gestioncolas_fsmFireFollowsTransitionWhenReadyAndSolicitudColaTrue, "test_fsm_gestioncolas_fsmFireFollowsTransitionWhenReadyAndSolicitudColaTrue", 105);
-  run_test(test_fsm_gestioncolas_fsmFireFollowsTransitionWhenWaitinfAndTerminadoTrue, "test_fsm_gestioncolas_fsmFireFollowsTransitionWhenWaitinfAndTerminadoTrue", 118);
+  run_test(test_fsm_gestioncolas_fsmFireFollowsTransitionWhenWaitinfAndTerminadoTrue, "test_fsm_gestioncolas_fsmFireFollowsTransitionWhenWaitinfAndTerminadoTrue", 119);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

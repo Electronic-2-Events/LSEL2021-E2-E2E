@@ -35,20 +35,20 @@
   :line: 92
   :message: ''
   :unity_test_time: 0
-:failures:
 - :test: test_fsm_gestioncolas_fsmFireFollowsTransitionWhenReadyAndSolicitudColaTrue
-  :line: 114
-  :message: Expression Evaluated To FALSE
+  :line: 105
+  :message: ''
   :unity_test_time: 0
 - :test: test_fsm_gestioncolas_fsmFireFollowsTransitionWhenWaitinfAndTerminadoTrue
-  :line: 127
-  :message: Expression Evaluated To FALSE
+  :line: 119
+  :message: ''
   :unity_test_time: 0
+:failures: []
 :ignores: []
 :counts:
   :total: 10
-  :passed: 8
-  :failed: 2
+  :passed: 10
+  :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.014897500000188302
+:time: 0.008227199999964796

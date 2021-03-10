@@ -106,12 +106,13 @@ void test_fsm_gestioncolas_fsmFireFollowsTransitionWhenReadyAndSolicitudColaTrue
 {
     fsm_gestioncolas_t f;
 
+    f.fsm.current_state = READY;
     custom_solicitud_cola_ExpectAndReturn(1);
 
     fsm_gestioncolas_init(&f, custom_solicitud_cola, NULL);
     fsm_fire((fsm_t*)(&f));
 
-    TEST_ASSERT(f.fsm.current_state == READY);
+    TEST_ASSERT(f.fsm.current_state == WAITING);
     TEST_ASSERT_TRUE(f.Solicitud == 1);
 }
 
@@ -122,8 +123,10 @@ void test_fsm_gestioncolas_fsmFireFollowsTransitionWhenWaitinfAndTerminadoTrue(v
     custom_terminado_ExpectAndReturn(1);
 
     fsm_gestioncolas_init(&f, NULL, custom_terminado);
-    fsm_fire((fsm_t*)(&f));
 
+    f.fsm.current_state = WAITING;
+    fsm_fire((fsm_t*)(&f));
+    
     TEST_ASSERT(f.fsm.current_state == WAITING);
     TEST_ASSERT_TRUE(f.Listo == 1);
 }

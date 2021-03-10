@@ -256,7 +256,9 @@ void test_fsm_gestioncolas_fsmFireFollowsTransitionWhenReadyAndSolicitudColaTrue
 
 
 
-    custom_solicitud_cola_CMockExpectAndReturn(109, 1);
+    f.fsm.current_state = READY;
+
+    custom_solicitud_cola_CMockExpectAndReturn(110, 1);
 
 
 
@@ -270,9 +272,9 @@ void test_fsm_gestioncolas_fsmFireFollowsTransitionWhenReadyAndSolicitudColaTrue
 
 
 
-    do {if ((f.fsm.current_state == READY)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(114)));}} while(0);
+    do {if ((f.fsm.current_state == WAITING)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(115)));}} while(0);
 
-    do {if ((f.Solicitud == 1)) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(115)));}} while(0);
+    do {if ((f.Solicitud == 1)) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(116)));}} while(0);
 
 }
 
@@ -286,7 +288,7 @@ void test_fsm_gestioncolas_fsmFireFollowsTransitionWhenWaitinfAndTerminadoTrue(v
 
 
 
-    custom_terminado_CMockExpectAndReturn(122, 1);
+    custom_terminado_CMockExpectAndReturn(123, 1);
 
 
 
@@ -296,12 +298,16 @@ void test_fsm_gestioncolas_fsmFireFollowsTransitionWhenWaitinfAndTerminadoTrue(v
 
                                  , custom_terminado);
 
+
+
+    f.fsm.current_state = WAITING;
+
     fsm_fire((fsm_t*)(&f));
 
 
 
-    do {if ((f.fsm.current_state == WAITING)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(127)));}} while(0);
+    do {if ((f.fsm.current_state == WAITING)) {} else {UnityFail( ((" Expression Evaluated To FALSE")), (UNITY_UINT)((UNITY_UINT)(130)));}} while(0);
 
-    do {if ((f.Listo == 1)) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(128)));}} while(0);
+    do {if ((f.Listo == 1)) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(131)));}} while(0);
 
 }
