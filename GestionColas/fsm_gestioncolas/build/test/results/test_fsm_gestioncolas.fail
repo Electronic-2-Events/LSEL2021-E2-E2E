@@ -1,0 +1,54 @@
+---
+:source:
+  :path: test
+  :file: test_fsm_gestioncolas.c
+:successes:
+- :test: test_fsm_gestioncolas_fsmInitFillsStruct
+  :line: 19
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_gestioncolas_fsmInitListo
+  :line: 30
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_gestioncolas_fsmInitSolicitud
+  :line: 39
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_gestioncolas_fsmInitOrden
+  :line: 48
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_gestioncolas_fsmFireCallsSolicitudColaWhenReady
+  :line: 59
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_gestioncolas_fsmFireCallsTerminadoWhenWaiting
+  :line: 70
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_gestioncolas_fsmFireNoCallsSolicitudColaWhenWaiting
+  :line: 81
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_gestioncolas_fsmFireNoCallsTerminadoWhenReady
+  :line: 92
+  :message: ''
+  :unity_test_time: 0
+:failures:
+- :test: test_fsm_gestioncolas_fsmFireFollowsTransitionWhenReadyAndSolicitudColaTrue
+  :line: 114
+  :message: Expression Evaluated To FALSE
+  :unity_test_time: 0
+- :test: test_fsm_gestioncolas_fsmFireFollowsTransitionWhenWaitinfAndTerminadoTrue
+  :line: 127
+  :message: Expression Evaluated To FALSE
+  :unity_test_time: 0
+:ignores: []
+:counts:
+  :total: 10
+  :passed: 8
+  :failed: 2
+  :ignored: 0
+:stdout: []
+:time: 0.014897500000188302
