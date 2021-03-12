@@ -1,0 +1,7 @@
+---
+build/test/mocks/mock_client.c:
+- TEST
+src/fsm.c:
+- TEST
+src/fsm_contador.c:
+- TEST
