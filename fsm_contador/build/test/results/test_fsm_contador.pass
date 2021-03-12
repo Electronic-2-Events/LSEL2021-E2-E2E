@@ -1,0 +1,58 @@
+---
+:source:
+  :path: test
+  :file: test_fsm_contador.c
+:successes:
+- :test: test_fsm_contador_fsmInitFillsStruct
+  :line: 19
+  :message: ''
+  :unity_test_time: 0
+- :test: 'test_fsm_contador_fsmNoSolicitud '
+  :line: 30
+  :message: ''
+  :unity_test_time: 0
+- :test: 'test_fsm_contador_fsmFireCallsSolicitudWhenContador '
+  :line: 39
+  :message: ''
+  :unity_test_time: 0
+- :test: 'test_fsm_contador_fsmFireCallsListoWhenContador '
+  :line: 51
+  :message: ''
+  :unity_test_time: 0
+- :test: 'test_fsm_contador_fsmFireTransitionWhenSolicitud '
+  :line: 63
+  :message: ''
+  :unity_test_time: 0
+- :test: 'test_fsm_contador_fsmFireTransitionWhenSolicitudAndPersonasHasValue '
+  :line: 76
+  :message: ''
+  :unity_test_time: 0
+- :test: 'test_fsm_contador_fsmFireTwoTransitionWhenSolicitudAndPersonasHasValue '
+  :line: 90
+  :message: ''
+  :unity_test_time: 0
+- :test: 'test_fsm_contador_fsmFireTransitionWhenListo '
+  :line: 105
+  :message: ''
+  :unity_test_time: 0
+- :test: 'test_fsm_contador_fsmFireTransitionWhenListoAndPersonaHasBiggerValue '
+  :line: 119
+  :message: ''
+  :unity_test_time: 0
+- :test: 'test_fsm_contador_fsmFireTwoTransitionWhenListoAndPersonasHasBiggerValue '
+  :line: 133
+  :message: ''
+  :unity_test_time: 0
+- :test: 'test_fsm_contador_fsmFireTransitionWhenNoSolicitudAndNoListoAndPersonasHasValue '
+  :line: 148
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 11
+  :passed: 11
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.0073296999999001855
