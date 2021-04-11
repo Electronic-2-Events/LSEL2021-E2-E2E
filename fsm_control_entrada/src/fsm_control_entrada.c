@@ -19,15 +19,17 @@ static int fsm_NFC(fsm_t *f)
 
     if (fp->NFC)
     {
-        users *list = fp->usuarios;
+        users *list = fp->FirstUser;
         users *next = list->nextUser;
 
         int ID = NFC();
 
         while (next != NULL)
         {
-            if (list->ID == ID)
+            if (list->ID == ID){
+                list->estado = NOT(list->estado);
                 return 1;
+            }
             else
                 list = next;
         }
@@ -114,6 +116,7 @@ void fsm_control_entrada_init(fsm_control_entrada_t *f, fsm_control_entrada_NFC_
                               fsm_control_entrada_s_prox_func_t s_prox, fsm_control_entrada_s_bar_bottom_func_t s_bar_bottom)
 {
     fsm_init((fsm_t *)f, entrada_tt);
+    f->FirstUser = NULL;
     f->subir = 0;
     f->bajar = 0;
     f->next_timeout = 0;

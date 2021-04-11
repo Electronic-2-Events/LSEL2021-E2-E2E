@@ -14,7 +14,7 @@ typedef int (*fsm_control_entrada_s_bar_bottom_func_t)(void);
 struct _fsm_control_entrada_t
 {
     fsm_t fsm;
-    users * usuarios;
+    users * FirstUser;
     fsm_control_entrada_NFC_func_t NFC;
     int ID;
     fsm_control_entrada_s_bar_top_func_t s_bar_top;
