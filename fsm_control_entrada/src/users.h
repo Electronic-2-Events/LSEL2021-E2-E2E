@@ -1,6 +1,16 @@
+#include <stddef.h>
+#include <stdbool.h>
+
 #ifndef _USERS_H
 #define _USERS_H
 
-int valid[3] = {1, 2,3};
+typedef struct users
+{
+
+    int ID;
+    bool estado;
+    users *nextUser;
+
+} users;
 
 #endif
