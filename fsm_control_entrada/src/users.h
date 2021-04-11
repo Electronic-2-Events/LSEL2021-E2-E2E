@@ -6,11 +6,13 @@
 
 typedef struct users
 {
-
     int ID;
     bool estado;
     users *nextUser;
-
 } users;
+
+users * fillNewPerson(int ID);
+void regNewPerson(int ID);
+void cleanList(users *list);
 
 #endif

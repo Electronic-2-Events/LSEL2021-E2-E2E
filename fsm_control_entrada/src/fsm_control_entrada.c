@@ -3,6 +3,8 @@
 #include "fsm_control_entrada.h"
 #include "fsm_control_entrada_internal.h"
 
+#include "users.h"
+
 #include "acciones.h"
 #include "timer.h"
 #include "users.h"
@@ -17,13 +19,17 @@ static int fsm_NFC(fsm_t *f)
 
     if (fp->NFC)
     {
-        int id = NFC();
-        for (int i = 0; i < sizeof(valid)-1; i++)
+        users *list = fp->usuarios;
+        users *next = list->nextUser;
+
+        int ID = NFC();
+
+        while (next != NULL)
         {
-            if (valid[i] == id)
-            {
+            if (list->ID == ID)
                 return 1;
-            };
+            else
+                list = next;
         }
     }
     return 0;

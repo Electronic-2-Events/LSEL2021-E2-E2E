@@ -1,15 +1,16 @@
 #include <stddef.h>
 #include <stdbool.h>
+#include <cstdlib>
 
 #include "users.h"
 
 users *firstElement = NULL;
 users *lastAdded = NULL;
 
-users *fillNewPerson(int ID)
+users * fillNewPerson(int ID)
 {
-    users *newPerson = NULL;
-    newPerson = malloc(sizeof(users));
+    users * newPerson = NULL;
+    newPerson = (users *) malloc(sizeof( users));
 
     newPerson->ID = ID;
     newPerson->estado = false;
@@ -31,3 +32,12 @@ void regNewPerson(int ID)
         lastAdded = lastAdded->nextUser;
     }
 };
+
+void cleanList (users * list){
+    users *next;
+    while(list){
+        next = list->nextUser;
+        free(list);
+        list = next;
+    }
+}

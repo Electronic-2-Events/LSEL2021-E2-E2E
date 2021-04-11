@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.vhd": "vhdl",
+        "users.c": "cpp"
+    }
+}
