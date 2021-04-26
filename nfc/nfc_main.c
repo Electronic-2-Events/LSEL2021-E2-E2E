@@ -18,6 +18,7 @@ static const uint8_t payload[] =
 {
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
 };
+static const uint8_t id_code[] = {'i', 'd'};
     /** @snippet [NFC text usage_1] */
    
 /* Buffer used to hold an NFC NDEF message. */
@@ -55,8 +56,8 @@ static ret_code_t msg_encode(uint8_t * p_buffer, uint32_t * p_len)
     /* Create NFC NDEF text record description*/
     NFC_NDEF_TEXT_RECORD_DESC_DEF(nfc_text_rec,
                                   UTF_8,
-                                  en_code,
-                                  sizeof(en_code),
+                                  id_code,
+                                  sizeof(id_code),
                                   payload,
                                   sizeof(payload));
     /** @snippet [NFC text usage_2] */
