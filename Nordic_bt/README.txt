@@ -1,4 +1,4 @@
-Se ha modificado la aplicacion peripheral_lbs incluida en los ejemplos de Nordid.
+Se ha modificado la aplicacion peripheral_lbs incluida en los ejemplos de Nordic.
 Es una aplicacion simple que transmite informacion en ambos sentidos. A traves de
 la app NRF_connect se puede cambiar el estado de un LED desde el movil, así como 
 que la placa informe de si un boton esta pulsado. 
