@@ -1,6 +1,6 @@
 #include <stddef.h>
 #include "fsm_control_pulsera.h"
-#include "fsm_control_pulsera_internal.h"
+//#include "fsm_control_pulsera_internal.h"
 
 /* Funcion de guarda 
  * Sensor que comprueba si la pulsera esta puesta o no. En caso negativo, se actia
@@ -85,7 +85,7 @@ fsm_show_on_screen_hour(fsm_t* f)
 static fsm_trans_t
 control_pulsera_tt[] = {
     {SUSPENDED, fsm_activation, IDLE, fsm_activate_NFC_tag},
-    {IDLE, fsm_get_time, IDLE, fsm_show_on_screen_hour},
+    //{IDLE, fsm_get_time, IDLE, fsm_show_on_screen_hour},
     {IDLE, fsm_detects_no_contact, SUSPENDED, fsm_deactivate_NFC_tag },
     {-1, NULL, -1, NULL}
 };
@@ -96,7 +96,7 @@ control_pulsera_tt[] = {
 void fsm_control_pulsera_init(fsm_control_pulsera_t* f, fsm_control_pulsera_get_time_func_t get_time,
     fsm_control_pulsera_activation_func_t activation, fsm_control_pulsera_detects_no_contact_func_t no_contact)
 {
-    fsm_init((fsm_t*)f, control_pulsera_tt);
+    fsm_init((fsm_t *)f, control_pulsera_tt);
     f->get_time = get_time;
     f->activation = activation;
     f->no_contact = no_contact;

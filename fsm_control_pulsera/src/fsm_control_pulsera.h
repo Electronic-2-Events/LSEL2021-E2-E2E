@@ -4,6 +4,11 @@
 #include <stdint.h>
 #include "fsm.h"
 
+enum {
+    SUSPENDED,
+    IDLE
+};
+
 typedef int (*fsm_control_pulsera_get_time_func_t) (void);
 typedef int (*fsm_control_pulsera_activation_func_t) (void);
 typedef int (*fsm_control_pulsera_detects_no_contact_func_t) (void);
@@ -27,7 +32,5 @@ typedef struct _fsm_control_pulsera_t fsm_control_pulsera_t;
 
 void fsm_control_pulsera_init(fsm_control_pulsera_t* f, fsm_control_pulsera_get_time_func_t get_time,
     fsm_control_pulsera_activation_func_t activation, fsm_control_pulsera_detects_no_contact_func_t no_contact);
-
-
 
 #endif // FSM_CONTROL_H
