@@ -1,0 +1,74 @@
+---
+:source:
+  :path: test
+  :file: test_fsm_control_pulsera.c
+:successes:
+- :test: test_fsm_control_pulsera_fsmInitFillsStructWithSomething
+  :line: 21
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_fsmInitStartsWithShowAlarm
+  :line: 32
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_fsmInitStartsNFCDeactivated
+  :line: 40
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_fsmFireCallsActivationWhenSuspended
+  :line: 49
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_fsmFireCallsNoContactWhenIdle
+  :line: 60
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_fsmFireCallsGetTimeWhenIdle
+  :line: 71
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_fsmFireNoCallsNoContactWhenSuspended
+  :line: 83
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_fsmFireNoCallsGetTimeWhenSuspended
+  :line: 94
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_fsmFireNoCallsActivationWhenIdle
+  :line: 105
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_fsmFireFollowsTransitionWhenSuspendedAndActivationIsTrue
+  :line: 118
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_fsmFireFollowsTransitionWhenIdleAndNoContactIsTrue
+  :line: 132
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_fsmFireFollowsTransitionWhenIdleAndGetTimeIsTrue
+  :line: 148
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_rebound_fsmFireDontFollowTransitionWhenSuspendedAndActivationIsFalse
+  :line: 162
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_rebound_fsmFireDontFollowTransitionWhenIdleAndNoContactIsFalse
+  :line: 175
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_control_pulsera_fsmFireComplete
+  :line: 189
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 15
+  :passed: 15
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.011637299990979955

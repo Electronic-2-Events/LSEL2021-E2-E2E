@@ -1,0 +1,9 @@
+---
+src/fsm_gestioncolas.c:
+- TEST
+src/fsm.c:
+- TEST
+build/test/mocks/mock_fsm_gestioncolas_internal.c:
+- TEST
+build/test/mocks/mock_client.c:
+- TEST

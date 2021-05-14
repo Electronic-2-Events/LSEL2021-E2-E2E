@@ -1,0 +1,9 @@
+---
+src/fsm_control_pulsera.c:
+- TEST
+build/test/mocks/mock_fsm_control_pulsera_internal.c:
+- TEST
+src/fsm.c:
+- TEST
+build/test/mocks/mock_client.c:
+- TEST
